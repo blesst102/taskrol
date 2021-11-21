@@ -1,0 +1,246 @@
+		
+			<!-- ============================ Page Title Start================================== -->
+			<div class="page-title bg-cover" style="background:#009688;" data-overlay="5" id="cover">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12"></div>
+					</div>
+				</div>
+			</div>
+			<!-- ============================ Page Title End ================================== -->
+			
+			<!-- ============================ Main Section Start ================================== -->
+			<section class="gray-bg pt-4">
+				<div class="container-fluid">
+				<div class="row m-0">
+						
+					<div class="col-xl-3 col-lg-4 col-md-12 col-sm-12">
+						<div class="dashboard-navbar overlio-top">
+						<div class="d-user-avater">
+						<% if current_user.avatar.attached? %>
+						  <%= image_tag current_user.avatar, class: 'img-fluid rounded'%>  
+						  <% else %>
+						  <%= image_tag(image_path('avatar.png'), class: 'img-fluid rounded') %>
+						  <% end %>       
+							<h4><%= current_user.firstname %> <%= current_user.lastname %></h4>
+							<span><%= current_user.location %></span>
+						</div>
+							
+							<div class="d-navigation">
+								<ul id="metismenu" class="metismenu">
+									<li><%= link_to myrequests_path, class: 'nav-link' do %>
+                                           Manage Requests
+										<i class="fa fa-bell" aria-hidden="true"></i><span class="good"></span>
+									<% end %>
+									</li>
+									<li>
+									<%= link_to requests_path, class: 'nav-link' do %>
+                                         Requests
+										<i class="fa fa-bell" aria-hidden="true"></i><span class="good"></span>
+									<% end %>
+									</li>
+
+								</ul>
+							</div>
+							
+						</div>
+					</div>
+						
+						<!-- Item Wrap Start -->
+						<div class="col-xl-9 col-lg-8 col-md-12 col-sm-12">
+							<div class="row">
+								<div class="col-lg-12 col-md-12 col-sm-12">
+									<!-- Breadcrumbs -->
+									<div class="bredcrumb_wrap">
+										<nav aria-label="breadcrumb">
+										  <ol class="breadcrumb">
+											<li class="breadcrumb-item"><a href="#">Home</a></li>
+											<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+										  </ol>
+										</nav>	
+									</div>
+								</div>
+							</div>
+              <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                
+                <!-- Single Wrap -->
+                <div class="_dashboard_content">
+                  <div class="_dashboard_content_header">
+                    <div class="_dashboard__header_flex">
+                      <h4><i class="fa fa-briefcase ti-briefcase mr-1"></i>Request Summary</h4>	
+                    </div>
+                  </div>
+                  
+                  <div class="_dashboard_content_body">
+                  <div class="_dashboard_content_body p-0">
+                  <div class="_grouping_list_task">
+				  <div class="_dashboard_content_body p-0">
+				  <div class="_dashboard_list_group">
+				  
+					  <!-- Single List requests -->
+				  <div class="_dash_singl_box">
+						  <div class="_dash_singl_thumbs">
+						  <%= image_tag(image_path('negotiate.svg'), class: 'img-fluid circle') %>
+						  </div>
+						  <div class="_dash_singl_captions">
+						  <br><h5>Request by <%= @request.user.firstname %> <%= @request.user.lastname %></h5>
+							  <h4 class="_jb_title"><%= @request.title %> <span class="_dash_status expired"> <%= @request.category.title %></span></h4>
+							  <ul class="_grouping_list">
+								  <li><span><i class="fa fa-map-pin"></i><%= @request.streetname %> | <%= @request.landmark %>| <%= @request.housenumber %></span></li>
+								  <li><span><i class="fa fa-clock"></i><%= @request.date %> | <%= @request.time.strftime("%I:%m %p") %></span></li>
+								  <li><span><i class="fa fa-briefcase"></i><%= @request.requestoption.title %></span></li>
+							  </ul>
+							  <ul class="_action_grouping_list">
+								<p><%= @request.description %></p>
+
+							  </ul>
+						  </div>
+					  </div>
+
+				  </div>
+			  </div>
+
+		  <div class="row">
+								<div class="col-lg-12 col-md-12 col-sm-12">
+									
+									<!-- Single Wrap -->
+									<div class="_dashboard_content">
+										<div class="_dashboard_content_header">
+											<div class="_dashboard__header_flex">
+													
+											</div>
+										</div>
+										
+										<div class="_dashboard_content_body p-0">
+										<% if current_user == @request.user && @request.awarded_proposal.blank? %>
+											<div class="_grouping_list_task">
+											<% if @proposals.present? %>
+											<div class="container">
+											<h4><i class="fa fa-hourglass-start ti-layers mr-1"></i>Active Bids</h4>
+											</div>
+											<% @proposals.each do |proposal| %>
+												<!-- Single List -->
+												<div class="_manage_task_list">
+													<div class="_manage_task_list_flex">
+														<h4 class="_jb_title">
+														<% if proposal.user.avatar.attached? %>
+														<%= image_tag proposal.user.avatar, class: 'rounded-circle', width: '80' %>  
+														<% else %>
+														<%= image_tag(image_path('c-4.png'), class: 'rounded-circle', width: '80') %>
+														<% end %>
+														<%= proposal.user.firstname %></h4>
+														<span class="_elopi_designation">Bid: <%= proposal.created_at.strftime("%b %d, %Y") %></span>
+														<ul class="_action_grouping_list">
+														<p>Skills: <%= proposal.user.skills %></p></br>
+														<p><%= proposal.description %>	</p>
+														</ul>
+													</div>
+													<div class="_manage_task_list_right">
+														<div class="_act_tsk_info">
+															<ul class="_act_tsk_list">
+																<li>
+																	<div class="_act_capt_01">
+																		<h5>Status</h5>
+																		<span><%= proposal.status %></span>	
+																	</div>
+																</li>
+																<li>
+																	<div class="_act_capt_01">
+																		<h5>Arrival Time</h5>
+																		<span><%= proposal.arrival_duration %></span>	
+																	</div>
+																</li>
+															</ul>
+														</div>
+													</div>
+													
+													<%= form_for @request, method: :put do |f| %>
+													<%= f.hidden_field :awarded_proposal, value: proposal.id %>
+													<%= f.hidden_field :open, value: false %>
+													<%= f.submit "Accept Bid", class: 'btn btn-primary' %> 
+													<% end %>                                 
+												</div>
+												<% end %>
+												<hr>
+												<% end %>
+				
+												<% else %>
+				
+												<% end %>
+											</div>
+										</div>
+									</div>
+									<!-- Single Wrap End -->
+									<% if user_signed_in? && @request.user != current_user %>
+									<% if @request.open == true %>
+									<%= form_for :proposal, url: request_proposals_path(@request) do |f| %>
+									<div class="form_row_box_body">
+									<%= render 'layouts/notices' %>
+										<div class="form-row">
+											<div class="col-lg-4 col-md-12">
+												<div class="form-group">
+													<label class="active">Arrival Time</label>
+													<%= f.text_field :arrival_duration, class: 'form-control', placeholder: '30 mins' %>
+												</div>
+											</div>
+											
+											<div class="col-lg-4 col-md-12">
+												<div class="form-group">
+													<label class="active">Description</label>
+													<%= f.text_field :description, class: 'form-control', placeholder: 'Describe what is needed to start' %>
+												</div>		
+											</div>
+											
+											<div class="col-lg-4 col-md-12">
+												<div class="form-group">
+													<label class="active">Status</label>
+													<%= f.select :status, [["Accept", 'Accept'], ["Reject", 'Reject'], ["Reschedule", 'Reschedule']], { :selected => false }, class: 'form-select', required: true %>												</div>			
+											</div>
+											</div>
+											<div class="col-lg-3 col-md-12">
+												<div class="form-group">
+												<%= f.submit "Submit Proposal", class: 'btn btn-primary btn-block' %>
+												</div>
+												</div>
+										</div>
+											<% end %>
+											<% else %>
+											 Request has been closed
+											<% end %>
+
+											<% elsif @request.user == current_user && @request.open == true %>
+											<h3 class="text-center"> <i class="fa fa-hourglass-start ti-layers mr-1"></i> Waiting for Bids</h3>
+											<% elsif @request.open == false %>
+											<div class="message-plunch">
+													<div class="dash-msg-avatar"><img src="https://image.flaticon.com/icons/png/512/145/145849.png" alt=""></div>
+													<div class="dash-msg-text"><p>
+													<h6 class="text-center">
+													<% if @awarded_proposal.user.avatar.attached? %>
+													<%= image_tag @awarded_proposal.user.avatar, class: 'rounded-circle', width: '80' %>  
+													<% else %>
+													<%= image_tag(image_path('c-4.png'), class: 'rounded-circle', width: '80') %>
+													<% end %><br><br>
+													Hello, my name is <%= @awarded_proposal.user.firstname %> <%= @awarded_proposal.user.lastname %><br> a (certified krol) on 
+													taskrol.com . Thank you for hiring me to help you with your work<br><br>
+													<span>Skills: <%= @awarded_proposal.user.skills %><span><br><br>
+													<span>Click button below<span>
+													<br><br><span><a class="btn btn-success" href="https://wa.me/<%= @awarded_proposal.user.phone %>?text=I'm%20interested%20in%20your%20services: ">Lets Chat <%= @awarded_proposal.user.phone %></a><span><br>
+													</h6>
+													<%= link_to "Add Review", new_review_path(@awarded_proposal), class: "btn btn-primary" %>
+													</p></div>
+												</div>
+											<% else %>
+											<h3 class="text-center">Sign in to make a bid!</h3> 
+											<%= link_to 'Sign in', new_user_session_path, class: 'btn btn-primary' %>
+											<% end %> 
+										</div>
+									</div>
+									
+								</div>
+							</div>
+       </div>
+</section>
+
+
+

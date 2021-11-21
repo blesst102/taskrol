@@ -1,0 +1,114 @@
+		
+			<!-- ============================ Page Title Start================================== -->
+			<div class="page-title bg-cover" style="background:#009688;" data-overlay="5" id="cover">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12"></div>
+					</div>
+				</div>
+			</div>
+			<!-- ============================ Page Title End ================================== -->
+			
+			<!-- ============================ Main Section Start ================================== -->
+			<section class="gray-bg pt-4">
+				<div class="container-fluid">
+                  <%= render 'layouts/sidebar' %>
+						
+						<!-- Item Wrap Start -->
+						<div class="col-xl-9 col-lg-8 col-md-12 col-sm-12">
+							<div class="row">
+								<div class="col-lg-12 col-md-12 col-sm-12">
+									<!-- Breadcrumbs -->
+									<div class="bredcrumb_wrap">
+										<nav aria-label="breadcrumb">
+										  <ol class="breadcrumb">
+											<li class="breadcrumb-item"><a href="#">Home</a></li>
+											<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+										  </ol>
+										</nav>	
+									</div>
+								</div>
+							</div>
+                            <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                
+                                <!-- Single Wrap -->
+                                <div class="_dashboard_content">
+                                    <div class="_dashboard_content_header">
+                                        <div class="_dashboard__header_flex">
+                                            <h4><i class="fa fa-user mr-1"></i>Recent Requests</h4>	
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="_dashboard_content_body">
+                                        <div class="row">
+                                        <% @requests.each do |request| %>
+                                            <!-- Single List -->
+                                            <div class="col-xl-4 col-lg-6 col-md-6">
+                                                <div class="_dash_grid_box">
+                                                    <div class="_dash_remove_wrap">
+                                                    <div class="_dash_grid_box_thumb">
+                                                    <%= image_tag(image_path('step-3.png'), class: 'img-fluid circle') %>
+                                                    </div>
+                                                    <div class="_dash_grid_box_caption">
+                                                        <span class="_elopi_location"><i class="fa fa-street-view mr-1"></i><%= request.streetname %>, <%= request.housenumber %></span>
+                                                        <h4 class="_elcio_title"><a href="#"><%= link_to request.title, request %><%#= request.title %></a></h4>
+                                                        <div class="_dash_usr_rates">
+                                                            <span class="good">4.5</span>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                        </div>
+                                                        
+                                                        <div class="_dash_usr_bid_rate">
+                                                            <ul>
+                                                                <li><%= request.category.range %><span>Fixed price</span></li>
+                                                                <li><%= request.proposals.count %><span>Messages</span></li>
+                                                            </ul>																
+                                                        </div>
+                                                        
+                                                        <div class="_dash_usr_actioned">
+                                                            <ul>
+                                                                <li><%= link_to edit_request_path(request), class: 'btn btn-outline-success' do %>
+                                                                <i class="fa fa-check"></i>Edit
+                                                                <% end %>
+                                                                </li>
+                                                                <%= button_to request_path(request), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-outline-success' do %>
+                                                                    <i class="fa fa-trash"></i>Delete
+                                                                    <% end %>
+                                                            </ul>																
+                                                        </div>
+                                                    </div>
+                                                    <div class="_dash_usr_information">
+                                                        <ul>
+                                                                <% if request.open %>
+                                                                <li><i class="fa fa-toggle-on mr-1"></i>Open</li>
+                                                                <% else %>
+                                                                <li><i class="fa fa-toggle-off mr-1"></i>Closed</li>
+                                                                <% end %>
+                                                           
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>                                            
+                                        </div>
+                                        <% end %>
+                                    </div>
+                                </div>
+                                <!-- Single Wrap End -->
+                                
+                            </div>
+                        </div>
+                  
+                  </div>
+                </div>
+
+						
+</div>
+</div>
+</section>
+
+
+

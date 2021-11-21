@@ -1,0 +1,166 @@
+<div class="container">
+<div class="modal-body">
+<div class="card">
+<div class="card-header">
+<h5 class="card-title">Tell Us About Yourself</h5>
+</div>
+<div class="card-body">
+  <h5 class="card-title">Secure, Reliable And Fast</h5>
+  <div class="row flex-lg row">
+  <div class="col-lg-6">
+  <p class="card-text">We are bringing thousands of experts and users who are in need of work to be done</p>
+  <div class="list-group">
+  <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+  <%= image_tag(image_path('register.svg'), width: '150px', class: 'rounded-circle flex-shrink-0') %>
+    <div class="d-flex gap-2 w-100 justify-content-between">
+      <div>
+        <h6 class="mb-0">Completely free to register as requester</h6>
+        <p class="mb-0 opacity-50">Its free to register and search for experts
+        on our platform.</p>
+      </div>
+    </div>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+  <%= image_tag(image_path('worker.svg'), width: '150px', class: 'rounded-circle flex-shrink-0') %>
+    <div class="d-flex gap-2 w-100 justify-content-between">
+      <div>
+        <h6 class="mb-0">Access to service experts/requesters</h6>
+        <p class="mb-0 opacity-75">Get unlimited access to certified experts to help
+        you with your request as well as thousands request
+        that comes every day.</p>
+      </div>
+    </div>
+  </a>
+  <a href="#" class="list-group-item list-group-item-action d-flex gap-3 py-3" aria-current="true">
+  <%= image_tag(image_path('time.svg'), width: '150px', class: 'rounded-circle flex-shrink-0') %>
+    <div class="d-flex gap-2 w-100 justify-content-between">
+      <div>
+        <h6 class="mb-0">Save time</h6>
+        <p class="mb-0 opacity-75">We match both experts who will be providing services
+        to requesters who need jobs done.</p>
+      </div>
+    </div>
+  </a>
+</div>
+</div>
+<div class="col-lg-6">
+<div class="card">
+  <div class="card-body">
+<div class="login-form">
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+    <h5 class="card-title">Tell Us About Yourself</h5>
+    <form>
+        <div class="container">
+            <input class="form-check-input" type="checkbox" id="formButton">Become a tasker (Please check if you are signing up as an expert)</button>
+        </div>
+        <hr>
+        <div class="form-group">
+          <% if @user.avatar.attached? %>
+            <%= image_tag @user.avatar, class: 'img-fluid rounded'%>  
+            <% end %> 
+          <label for="exampleFormControlFile1">Upload a profile picture</label>
+          <%= f.file_field :avatar, class: 'form-control-file', id: 'exampleFormControlFile1' %>
+         </div>
+          <div class="form-group">
+            <%= f.text_field :firstname, autofocus: true, autocomplete: "firstname", class: 'form-control', placeholder: 'Firstname' %>
+          </div>
+
+
+          <div class="form-group">
+            <%= f.text_field :lastname, autofocus: true, autocomplete: "lastname", class: 'form-control', placeholder: 'Lastname' %>
+          </div>
+
+          <div class="form-group">
+            <%= f.text_field :phone, autofocus: true, class: 'form-control', placeholder: 'Mobile Number' %>
+          </div>
+          <div  id="form1" style="display:none;">
+          <div class="form-group">
+            <%= f.text_field :skills, class: 'form-control', placeholder: 'Skills' %>
+          </div>
+
+            <%= f.hidden_field :photo, class:"form-control", readonly: "true", value: 'uncertified' %>
+
+
+          <div class="form-group">
+            <%= f.text_field :voternumber, autofocus: true, autocomplete: "lastname", class: 'form-control', placeholder: 'Voter ID Number' %>
+          </div>
+          </div>
+        <div class="form-group">
+          <%= f.text_field :location, autofocus: true, autocomplete: "lastname", class: 'form-control', id: 'search_input'%>
+          <input type="hidden" id="loc_lat" />
+          <input type="hidden" id="loc_long" />
+        </div>
+          <div class="form-group">
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email Address' %>
+          </div>
+            <div class="form-group">     
+              <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder: 'Password (Minimum 6 Characters)' %>
+          </div>
+       
+          <div class="form-group">
+            <%= f.password_field :password_confirmation, autofocus: true, autocomplete: "password", class: 'form-control', placeholder: 'Repeat Password' %>
+          </div>
+        </div>
+      <div class="form-group">
+      <%= f.submit "Get Started", class: 'btn btn-success' %>
+      </div>
+      <%= render "devise/shared/links" %>
+      <% end %>
+    </form>
+</div>
+</div>
+</div>
+</div>
+</div>
+  
+  </div>
+  
+</div>
+</div>
+
+<script>
+var searchInput = 'search_input';
+
+$(document).ready(function () {
+    var autocomplete;
+    autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
+        types: ['geocode'],
+    });
+	
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        var near_place = autocomplete.getPlace();
+        document.getElementById('loc_lat').value = near_place.geometry.location.lat();
+        document.getElementById('loc_long').value = near_place.geometry.location.lng();
+		
+        document.getElementById('latitude_view').innerHTML = near_place.geometry.location.lat();
+        document.getElementById('longitude_view').innerHTML = near_place.geometry.location.lng();
+    });
+});
+
+$(document).on('change', '#'+searchInput, function () {
+    document.getElementById('latitude_input').value = '';
+    document.getElementById('longitude_input').value = '';
+	
+    document.getElementById('latitude_view').innerHTML = '';
+    document.getElementById('longitude_view').innerHTML = '';
+});
+
+var autocomplete;
+autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
+    types: ['geocode'],
+    componentRestrictions: {
+        country: "Ghana"
+    }
+});
+
+$("#formButton").click(function(){
+        $("#form1").toggle();
+    });
+
+  
+</script>
+
+
+
+

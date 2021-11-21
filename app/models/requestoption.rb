@@ -1,0 +1,2 @@
+class Requestoption < ApplicationRecord
+end

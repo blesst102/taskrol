@@ -1,0 +1,236 @@
+		
+			<!-- ============================ Page Title Start================================== -->
+			<div class="page-title bg-cover" style="background:white;" data-overlay="5" id="cover">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12"></div>
+					</div>
+				</div>
+			</div>
+			<!-- ============================ Page Title End ================================== -->
+			
+			<!-- ============================ Main Section Start ================================== -->
+			<section class="gray-bg pt-4">
+				<div class="container-fluid">
+        <div class="row m-0">
+						
+        <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12">
+          <div class="dashboard-navbar overlio-top">
+            
+            <div class="d-user-avater">
+            <%= image_tag(image_path('avatar.png'), class: 'img-fluid rounded') %>
+              <h4>Tademe Bless</h4>
+              <span>East Legon, Ghana</span>
+            </div>
+            
+            <div class="d-navigation">
+              <ul id="metismenu" class="metismenu">
+                <li><%= link_to myrequests_path, class: 'nav-link' do %>
+                   Manage Requests
+                  <i class="fa fa-bell" aria-hidden="true"></i><span class="good"></span>
+                <% end %>
+                </li>
+                <li>
+                <%= link_to requests_path, class: 'nav-link' do %>
+                    Requests
+                  <i class="fa fa-bell" aria-hidden="true"></i><span class="good"></span>
+                <% end %>
+                </li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+          
+		
+		<!-- Item Wrap Start -->
+		<div class="col-xl-9 col-lg-8 col-md-12 col-sm-12">
+			<div class="row">
+				<div class="col-lg-12 col-md-12 col-sm-12">
+					<!-- Breadcrumbs -->
+					<div class="bredcrumb_wrap">
+						<nav aria-label="breadcrumb">
+							<ol class="breadcrumb">
+							<li class="breadcrumb-item"><a href="#">Home</a></li>
+							<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+							</ol>
+						</nav>	
+					</div>
+				</div>
+			</div>
+     <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-12">
+				
+				<!-- Single Wrap -->
+				<div class="_dashboard_content">
+					<div class="_dashboard_content_header">
+						<div class="_dashboard__header_flex">
+							<h4><i class="fa fa-user mr-1"></i>My Account</h4>	
+						</div>
+					</div>
+					<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+				<%= render "devise/shared/error_messages", resource: resource %>
+					<div class="_dashboard_content_body">
+						<div class="row">
+							<div class="col-auto">
+								<div class="custom-file avater_uploads">
+								<% if @user.avatar.attached? %>
+								<%= image_tag @user.avatar, class: 'img-fluid rounded'%>  
+								<% else %>
+								<%= image_tag(image_path('avatar.png'), class: 'img-fluid rounded') %>
+								<% end %> 
+							<%= f.file_field :avatar, class: 'custom-file-input', id: 'customFile' %>
+									<label class="custom-file-label" for="customFile"><i class="fa fa-user"></i></label>
+								</div>
+							</div>
+							
+							<div class="col">
+								<div class="row">
+									<div class="col-xl-6 col-lg-6">
+										<div class="form-group">
+											<label class="active">First Name</label>
+			<%= f.text_field :firstname, autofocus: true, autocomplete: "firstname", class: 'form-control with-light' %>
+										</div>
+									</div>
+									<div class="col-xl-6 col-lg-6">
+										<div class="form-group">
+											<label class="active">Last Name</label>
+			<%= f.text_field :lastname, autofocus: true, autocomplete: "firstname", class: 'form-control with-light' %>
+										</div>
+			<%= f.hidden_field :photo, class:"form-control", readonly: "true", value: 'uncertified' %>
+									</div>
+									<div class="col-xl-6 col-lg-6">
+										<div class="form-group">
+											<label>Mobile Number</label>
+			<%= f.text_field :phone, autofocus: true, autocomplete: "phone", class: 'form-control with-light' %>
+										</div>
+									</div>
+									<div class="col-xl-6 col-lg-6">
+										<div class="form-group">
+											<label class="active">Email</label>
+			<%= f.text_field :email, autofocus: true, autocomplete: "email", class: 'form-control with-light' %>
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+				<!-- Single Wrap End -->
+						
+						<!-- Single Wrap -->
+						<div class="_dashboard_content">
+							<div class="_dashboard_content_header">
+								<div class="_dashboard__header_flex">
+									<h4><i class="fa fa-user"></i>My Profile</h4>	
+								</div>
+							</div>
+							
+							<div class="_dashboard_content_body">
+								<div class="row">
+									<div class="col-xl-6 col-lg-6">
+										<div class="form-group">
+				<label>Skills</label>
+				<%= f.text_field :skills, autofocus: true, autocomplete: "skills", class: 'form-control with-light' %>
+										</div>
+									</div>
+									<div class="col-xl-6 col-lg-6">
+										<div class="form-group">
+											<label>Location</label>
+				<%= f.text_field :location, autofocus: true, autocomplete: "phone", class: 'form-control with-light' %>
+			</div>
+									</div>
+		</div>
+						<!-- Single Wrap End -->
+						
+						<!-- Single Wrap -->
+						<div class="_dashboard_content">
+							<div class="_dashboard_content_header">
+								<div class="_dashboard__header_flex">
+									<h4><i class="fa fa-lock"></i>Security</h4>	
+								</div>
+							</div>
+							
+							<div class="_dashboard_content_body">
+								<div class="row">
+									<div class="col-xl-4 col-lg-4">
+										<div class="form-group">
+											<label>Old Password</label>
+				<%= f.password_field :current_password, autocomplete: "current-password", class: 'form-control' %>
+										</div>
+									</div>
+									<div class="col-xl-4 col-lg-4">
+										<div class="form-group">
+											<label>New Password</label>
+				<%= f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder: 'minimum (6 characters)' %>
+										</div>
+									</div>
+									<div class="col-xl-4 col-lg-4">
+										<div class="form-group">
+											<label>Repeat New Password</label>
+				<%= f.password_field :password_confirmation, autofocus: true, autocomplete: "password", class: 'form-control' %>
+				</div>
+									</div>
+								</div>
+							</div>
+		     <%= f.submit "Update", class: 'btn btn-success' %>							
+						</div>
+						<!-- Single Wrap End -->
+	
+		<p><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %> Unhappy? </p>
+		
+		<%= link_to "Back", :back, class: 'btn btn-outline-success' %>
+					</div>
+	<% end %>
+	</form>
+
+</div>
+</div>
+</section>
+
+<script>
+var searchInput = 'search_input';
+
+$(document).ready(function () {
+    var autocomplete;
+    autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
+        types: ['geocode'],
+    });
+	
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        var near_place = autocomplete.getPlace();
+        document.getElementById('loc_lat').value = near_place.geometry.location.lat();
+        document.getElementById('loc_long').value = near_place.geometry.location.lng();
+		
+        document.getElementById('latitude_view').innerHTML = near_place.geometry.location.lat();
+        document.getElementById('longitude_view').innerHTML = near_place.geometry.location.lng();
+    });
+});
+
+$(document).on('change', '#'+searchInput, function () {
+    document.getElementById('latitude_input').value = '';
+    document.getElementById('longitude_input').value = '';
+	
+    document.getElementById('latitude_view').innerHTML = '';
+    document.getElementById('longitude_view').innerHTML = '';
+});
+
+var autocomplete;
+autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
+    types: ['geocode'],
+    componentRestrictions: {
+        country: "Ghana"
+    }
+});
+</script>
+
+
+
+
+
+
+
+
+
+

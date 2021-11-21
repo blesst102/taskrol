@@ -1,0 +1,214 @@
+		
+			<!-- ============================ Page Title Start================================== -->
+			<div class="page-title bg-cover" style="background:#009688;" data-overlay="5" id="cover">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12"></div>
+					</div>
+				</div>
+			</div>
+			<!-- ============================ Page Title End ================================== -->
+			
+			<!-- ============================ Main Section Start ================================== -->
+			<section class="gray-bg pt-4">
+				<div class="container-fluid">
+        <div class="row m-0">
+						
+        <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12">
+          <div class="dashboard-navbar overlio-top">
+            
+          <div class="d-user-avater">
+          <% if current_user.avatar.attached? %>
+            <%= image_tag current_user.avatar, class: 'img-fluid rounded'%>  
+            <% else %>
+            <%= image_tag(image_path('avatar.png'), class: 'img-fluid rounded') %>
+            <% end %>       
+              <h4><%= current_user.firstname %> <%= current_user.lastname %></h4>
+              <span><%= current_user.location %></span>
+          </div>
+            
+            <div class="d-navigation">
+              <ul id="metismenu" class="metismenu">
+                 <li><%= link_to myrequests_path, class: 'nav-link' do %>
+                  Manage Requests
+                  <i class="fa fa-bell" aria-hidden="true"></i><span class="good"></span>
+                <% end %>
+                </li>
+                <li>
+                <%= link_to requests_path, class: 'nav-link' do %>
+                  Requests
+                  <i class="fa fa-bell" aria-hidden="true"></i><span class="good"></span>
+                <% end %>
+                </li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+          
+						
+						<!-- Item Wrap Start -->
+						<div class="col-xl-9 col-lg-8 col-md-12 col-sm-12">
+							<div class="row">
+								<div class="col-lg-12 col-md-12 col-sm-12">
+									<!-- Breadcrumbs -->
+									<div class="bredcrumb_wrap">
+										<nav aria-label="breadcrumb">
+										  <ol class="breadcrumb">
+											<li class="breadcrumb-item"><a href="#">Home</a></li>
+											<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+										  </ol>
+										</nav>	
+									</div>
+								</div>
+							</div>
+              <div class="row">
+              <div class="col-lg-12 col-md-12 col-sm-12">
+                
+                <!-- Single Wrap -->
+                <div class="_dashboard_content">
+                  <div class="_dashboard_content_header">
+                    <div class="_dashboard__header_flex">
+                      <h4><i class="fa fa-briefcase ti-briefcase mr-1"></i>Submit Request</h4>	
+                    </div>
+                  </div>
+                  
+                  <div class="_dashboard_content_body">
+                    <%= form_with(model: [request], local: true, data: { controller: "places", action: "google-maps-callback@window->places#initMap" }) do |form| %>
+                      <% if request.errors.any? %>
+                        <div id="error_explanation">
+                          <h2><%= pluralize(request.errors.count, "error") %> prohibited this request from being saved:</h2>
+                    
+                          <ul>
+                            <% request.errors.each do |error| %>
+                              <li><%= error.full_message %></li>
+                            <% end %>
+                          </ul>
+                        </div>
+                      <% end %>
+                      <div class="row">
+                      <div class="col-xl-4 col-lg-6">
+                        <div class="form-group">
+                          <label>Title of request</label>
+                          <%= form.text_field :title, class: 'form-control with-light' %>
+                        </div>
+                      </div>
+                      
+                      <div class="col-xl-4 col-lg-6">
+                        <div class="form-group with-light">
+                          <label>Category</label>
+                          <%= form.select(:category_id, Category.all.collect {|c| [c.title, c.id]},  {prompt: "Select"}, {class: 'form-control'}) %>
+                        </div>
+                      </div>
+                      
+                      <div class="col-xl-4 col-lg-6">
+                        <div class="form-group">
+                          <label>Location</label>
+                          <%= form.text_field :streetname, autofocus: true, autocomplete: "lastname", class: 'form-control', id: 'search_input' %>
+                          <input type="hidden" id="loc_lat" />
+                          <input type="hidden" id="loc_long" />                         
+                           </div>
+                      </div>
+                      </div>
+                    <div class="row">
+                      <div class="col-xl-6 col-lg-6">
+                        <label>Landmark</label>
+                        <div class="form-row">
+                          <div class="col-xl-6 col-lg-6 col-md-3">
+                            <div class="input-group mb-3">
+                            <%= form.text_field :landmark, class: 'form-control with-light' %>
+                              <div class="input-group-append">
+                                <span class="input-group-text light">GH</span>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="col-xl-6 col-lg-6 col-md-3">
+                            <div class="input-group mb-3">
+                            <%= form.text_field :housenumber, class: 'form-control with-light br-0' %>
+                              <div class="input-group-append">
+                                <span class="input-group-text light">HSE No.</span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <div class="col-xl-6 col-lg-6 col-md-3">
+                        <div class="form-group">
+                          <label>Date</label>
+                          <%= form.date_field :date, class: 'form-control with-light' %>
+                        </div>
+                      </div>
+                      </div>
+                      <div class="row">
+                      <div class="col-xl-6 col-lg-6 col-md-6">
+                      <div class="form-group">
+                      <label>Time</label>
+                      <%= form.time_field :time, class: 'form-control with-light' %>
+                    </div>
+                      </div>
+                      <div class="col-xl-6 col-lg-6 col-md-6">
+                      <div class="form-group">
+                      <label>Option</label>
+                      <%= form.select(:requestoption_id, Requestoption.all.collect {|r| [r.title, r.id]},  {prompt: "Select"}, {class: 'form-control'}) %>
+                    </div>
+                      </div>
+                      </div>
+                      <div class="row">
+                      <div class="col-xl-12 col-lg-12">
+                        <div class="form-group">
+                          <label>Tell Us about your request</label>
+                          <%= form.text_area :description, class: 'form-control with-light' %>
+                        </div>
+                      </div>                                            
+                    </div>
+                    <%= form.submit "Get Help", class: 'btn btn-success btn-lg' %>
+                  </div>
+                </div>
+                <!-- Single Wrap End --> 
+                
+                
+              </div>
+              <% end %>
+            </div>
+
+						
+</div>
+</div>
+</section>
+
+<script>
+var searchInput = 'search_input';
+
+$(document).ready(function () {
+    var autocomplete;
+    autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
+        types: ['geocode'],
+    });
+	
+    google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        var near_place = autocomplete.getPlace();
+        document.getElementById('loc_lat').value = near_place.geometry.location.lat();
+        document.getElementById('loc_long').value = near_place.geometry.location.lng();
+		
+        document.getElementById('latitude_view').innerHTML = near_place.geometry.location.lat();
+        document.getElementById('longitude_view').innerHTML = near_place.geometry.location.lng();
+    });
+});
+
+$(document).on('change', '#'+searchInput, function () {
+    document.getElementById('latitude_input').value = '';
+    document.getElementById('longitude_input').value = '';
+	
+    document.getElementById('latitude_view').innerHTML = '';
+    document.getElementById('longitude_view').innerHTML = '';
+});
+
+var autocomplete;
+autocomplete = new google.maps.places.Autocomplete((document.getElementById(searchInput)), {
+    types: ['geocode'],
+    componentRestrictions: {
+        country: "Ghana"
+    }
+});
+</script>

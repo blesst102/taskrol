@@ -1,0 +1,31 @@
+<div class="container">
+   <h1>Reviews</h1>
+  </div>
+<div class="_grouping_reviews_wrap">
+<% @reviews.each do |review| %>
+												<!-- Single Reviews -->
+      <div class="_grouping_single_reviews">
+        <div class="_grouping_single_reviews_thumb">
+          <img src="assets/img/team-1.jpg" class="img-fluid circle" alt="">
+        </div>
+        <div class="_grouping_single_reviews_caption">
+          <h4 class="_rev_title_cats"> <%= review.user.lastname %><span class="esxlop_titme">2 days ago</span></h4>
+          <div class="_dash_usr_rates mb-1">
+            <span class="good"><%= review.rating %></span>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+            <i class="fa fa-star"></i>
+          </div>
+          <h5 class="_rev_subject_cats"> <%= review.created_at%></h5>
+          <p><%= review.comment %></p>
+          <%= link_to 'Edit', edit_review_path(review) %>
+          <%= link_to 'Destroy', review, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </div>
+    
+  <% end %>
+
+</div>
+

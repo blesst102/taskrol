@@ -1,0 +1,160 @@
+		
+			<!-- ============================ Page Title Start================================== -->
+			<div class="page-title bg-cover" style="background:#009688;" data-overlay="5" id="cover">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12"></div>
+					</div>
+				</div>
+			</div>
+			<!-- ============================ Page Title End ================================== -->
+			
+			<!-- ============================ Main Section Start ================================== -->
+			<section class="gray-bg pt-4">
+				<div class="container-fluid">
+        <div class="row m-0">
+						
+        <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12">
+          <div class="dashboard-navbar overlio-top">
+            
+          <div class="d-user-avater">
+          <% if current_user.avatar.attached? %>
+            <%= image_tag current_user.avatar, class: 'img-fluid rounded'%>  
+            <% else %>
+            <%= image_tag(image_path('avatar.png'), class: 'img-fluid rounded') %>
+            <% end %>       
+              <h4><%= current_user.firstname %> <%= current_user.lastname %></h4>
+              <span><%= current_user.location %></span>
+          </div>
+            
+            <div class="d-navigation">
+              <ul id="metismenu" class="metismenu">
+                 <li><%= link_to myrequests_path, class: 'nav-link' do %>
+                  Manage Requests
+                  <i class="fa fa-bell" aria-hidden="true"></i><span class="good"></span>
+                <% end %>
+                </li>
+                <li>
+                <%= link_to requests_path, class: 'nav-link' do %>
+                  Requests
+                  <i class="fa fa-bell" aria-hidden="true"></i><span class="good"></span>
+                <% end %>
+                </li>
+                <li><%= link_to users_path, class: 'nav-link' do %>
+                  Users
+                  <i class="fa fa-user" aria-hidden="true"></i><span class="good"></span>
+                <% end %>
+                </li>
+                <li><a href="reviews.html">Categories</a></li>
+              </ul>
+            </div>
+            
+          </div>
+        </div>
+          
+						
+						<!-- Item Wrap Start -->
+						<div class="col-xl-9 col-lg-8 col-md-12 col-sm-12">
+							<div class="row">
+								<div class="col-lg-12 col-md-12 col-sm-12">
+									<!-- Breadcrumbs -->
+									<div class="bredcrumb_wrap">
+										<nav aria-label="breadcrumb">
+										  <ol class="breadcrumb">
+											<li class="breadcrumb-item"><a href="#">Dasboard</a></li>
+											<li class="breadcrumb-item active" aria-current="page">Users</li>
+										  </ol>
+										</nav>	
+									</div>
+								</div>
+							</div>
+                            <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                            <!-- Single Wrap -->
+                            <div class="_dashboard_content">
+                                <div class="_dashboard_content_header">
+                                    <div class="_dashboard__header_flex">
+                                        <h4><i class="fa fa-user mr-1"></i>Users</h4>	
+                                    </div>
+                                </div>
+                                
+                                <div class="_dashboard_content_body">
+                                    <div class="row">
+                                    <% @users.each do |user| %>   
+                                        <!-- Single List -->
+                                        <div class="col-xl-4 col-lg-6 col-md-6">
+                                            <div class="_dash_grid_box">
+                                                <div class="_dash_remove_wrap">
+                                                <div class="_dash_grid_box_thumb">
+                                                <% if user.avatar.attached? %>
+                                                <%= image_tag user.avatar, class: 'img-fluid circle', width: '30' %>  
+                                                <% else %>
+                                                <%= image_tag(image_path('profile.svg'), class: 'img-fluid circle', width: '30') %>
+                                                <% end %>
+                                                </div>
+                                                <div class="_dash_grid_box_caption">
+                                                    <span class="_elopi_location"><i class="fa fa-street-view mr-1"></i><%= user.location %></span>
+                                                    <h4 class="_elcio_title"><a href="#"><%= user.firstname %> <%= user.lastname %></a></h4>
+                                                    <div class="_dash_usr_rates">
+                                                        <span class="good">4.5</span>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                    </div>
+                                                    
+                                                    <div class="_dash_usr_bid_rate">
+                                                        <ul>
+                                                            <li><span>+233</span></li>
+                                                            <li><span><%= user.phone %></span></li>
+                                                        </ul>																
+                                                    </div>
+                                                    
+                                                    <div class="_dash_usr_actioned">
+                                                        <ul>
+                                                            <li>
+                                                            <i class="fa fa-handshake-o"></i> <%= user.skills %>
+                                                            </li>
+                                                                
+                                                        </ul>																
+                                                    </div>
+                                                </div>
+                                                <div class="_dash_usr_information">
+                                                <div class="single-widgets widget_tags">
+                                                    <h4 class="title">User Roles</h4>
+                                                    <ul>
+                                                      <li><% user.roles.each do |role| %>
+                                                        <%= link_to role.name %>
+                                                        <% end %>
+                                                      </li>
+                                                    </ul>
+                                                  </div>
+
+                                                    <ul>
+                                                    <li><%= link_to "Edit", edit_user_path(user), class: 'btn btn-outline-success' %></li>
+                                               
+                                            </ul>
+                                                </div>
+                                            </div>
+                                        </div>                                            
+                                    </div>
+                                    <% end %>
+                                </div>
+                            </div>
+                            <!-- Single Wrap End -->
+                            
+                        </div>
+                    </div>
+              
+              </div>
+            </div>
+
+                    
+</div>
+</div>
+</section>
+
+
+
+
