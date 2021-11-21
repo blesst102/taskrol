@@ -14,7 +14,7 @@ Turbolinks.start()
 ActiveStorage.start()
 
 import 'stylesheets/application'
-window.toastr = require('toastr')
+ 
 
 
 
