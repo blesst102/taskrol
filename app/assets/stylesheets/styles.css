@@ -1340,12 +1340,12 @@ ul.list-style-none li a:hover {
 }
 
 .btn:focus {
-	-webkit-box-shadow: none;
+	
 	box-shadow: none
 }
 
 .btn-link {
-	-webkit-box-shadow: none;
+	
 	box-shadow: none;
 	color: #263238;
 	padding: 10px 15px
@@ -1712,7 +1712,7 @@ ul.list-style-none li a:hover {
 .btn-info-gradiant.active,
 .btn-info-gradiant:active,
 .btn-info-gradiant:focus {
-	-webkit-box-shadow: 0;
+	
 	box-shadow: 0;
 	opacity: 1
 }
@@ -2575,15 +2575,13 @@ textarea.form-control {
 .form-control.with-border-shadow {
 	border-radius: 4px;
 	border: 1px solid #e9ecef;
-    
-	-webkit-box-shadow: 0 1px 4px 0 rgb(182 187 206 / 20%)
+
 }
 
 .with-border-shadow .select2-container--default .select2-selection--single {
 	border: 1px solid #e9ecef;
 	border-radius: 4px;
 	box-shadow: 0 1px 4px 0 rgb(182 187 206 / 20%);
-	-webkit-box-shadow: 0 1px 4px 0 rgb(182 187 206 / 20%)
 }
 
 .form-control.with-light {
@@ -3406,8 +3404,6 @@ nav a:hover {
 	padding: 15px;
 	background: #fff;
 	box-shadow: 0 0 50px 0 rgba(32, 32, 32, .15);
-	-webkit-box-shadow: 0 0 50px 0 rgba(32, 32, 32, .15);
-	border-radius: .4rem
 }
 
 .nav-menu>li>.nav-dropdown:before {
@@ -3922,7 +3918,6 @@ li.header-search {
 	}
 	.header.header-fixed {
 		box-shadow: 0 5px 30px rgba(0, 22, 84, .1);
-		-webkit-box-shadow: 0 5px 30px rgba(0, 22, 84, .1);
 		background: #fff;
 		position: fixed;
 		z-index: 999;
@@ -3969,7 +3964,7 @@ li.header-search {
 	}
 	.header.header-transparent.header-fixed {
 		box-shadow: 0 5px 30px rgba(0, 22, 84, .1);
-		-webkit-box-shadow: 0 5px 30px rgba(0, 22, 84, .1);
+		
 		background: #fff;
 		position: fixed;
 		z-index: 999;
@@ -4462,7 +4457,7 @@ h1.small {
 	padding: 10px;
 	border-radius: 6px;
 	box-shadow: 0 10px 12px rgb(77 60 160 / 10%);
-	-webkit-box-shadow: 0 10px 12px rgb(77 60 160 / 10%)
+	
 }
 
 .banner-search.style-2 .btn,
@@ -4483,7 +4478,7 @@ h1.small {
 	background: 0 0;
 	border-radius: 6px;
 	box-shadow: 0 0 8px 0 rgb(0 0 0 / 8%)!important;
-	-webkit-box-shadow: 0 0 8px 0 rgb(0 0 0 / 8%)!important
+	
 }
 
 form.search-big-form .form-group {
@@ -4621,7 +4616,7 @@ img.image-cover {
 	top: 0;
 	z-index: 99999;
 	overflow: auto;
-	-webkit-box-shadow: 0 2px 10px 0 #d8dde6;
+	
 	box-shadow: 0 2px 10px 0 #d8dde6;
 	position: relative;
 	animation: animateright .4s;
@@ -4663,7 +4658,7 @@ img.image-cover {
 	margin: 5px 10px;
 	transition: all ease .4s;
 	box-shadow: 0 0 0 5px rgb(255 255 255 / 30%);
-	-webkit-box-shadow: 0 0 0 5px rgb(255 255 255 / 30%)
+	
 }
 
 .btn._hire_freelancers:focus,
@@ -4680,7 +4675,7 @@ a.btn._loonking_job {
 	margin: 5px 10px;
 	transition: all ease .4s;
 	box-shadow: 0 0 0 5px rgb(255 255 255 / 30%);
-	-webkit-box-shadow: 0 0 0 5px rgb(255 255 255 / 30%)
+	
 }
 
 .btn._loonking_job:focus,
@@ -4767,7 +4762,7 @@ a.btn._loonking_job {
 	padding: 4px;
 	border-radius: 50%;
 	box-shadow: 0 0 0 3px rgb(11 133 236);
-	-webkit-box-shadow: 0 0 0 3px rgb(11 133 236);
+	
 	position: relative;
 	margin: 0 auto 10px
 }
@@ -4945,7 +4940,7 @@ h5._frc_title a {
 	background: #fff;
 	display: block;
 	padding: 2.5rem 1rem;
-	-webkit-box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%)!important;
+	
 	box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%)!important;
 	border-radius: 6px;
 	margin-bottom: 20px
@@ -4993,7 +4988,7 @@ h5._frc_title a {
 	border-radius: 8px;
 	padding: 0 1.5rem;
 	box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%);
-	-webkit-box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%)
+	
 }
 
 .urip_cats_browse_caption {
@@ -5133,7 +5128,7 @@ a._5gt9:hover img {
 	overflow: hidden;
 	margin-bottom: 30px;
 	box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%)!important;
-	-webkit-box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%)!important
+	
 }
 
 .ser_110_thumb {
@@ -5246,7 +5241,7 @@ a._5gt9:hover img {
 	overflow: hidden;
 	margin-bottom: 30px;
 	box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%);
-	-webkit-box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%)
+	
 }
 
 ._freelacers_120.large {
@@ -5356,7 +5351,7 @@ img._featured_jbs {
 	position: relative;
 	background: #fff;
 	box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%);
-	-webkit-box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%);
+	
 	border-radius: 6px;
 	margin-bottom: 30px;
 	overflow: hidden;
@@ -5537,7 +5532,7 @@ img._featured_jbs {
 	position: relative;
 	overflow: hidden;
 	box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%);
-	-webkit-box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%)
+	
 }
 
 ._jb_list72.selectd {
@@ -5708,7 +5703,7 @@ ul._requirement_lists li span._elios.req_7 {
 	position: relative;
 	transition: all ease .4s;
 	box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%);
-	-webkit-box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%)
+	
 }
 
 ._jb_list73_header {
@@ -5853,7 +5848,7 @@ ul.applieded_list li .nore_applied span {
 	border: 1px solid #f0f3fb;
 	transition: all ease .4s;
 	box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%);
-	-webkit-box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%)
+	
 }
 
 .side_flex_inline {
@@ -5970,7 +5965,7 @@ ul.applieded_list li .nore_applied span {
 	border-radius: 5px;
 	overflow: hidden;
 	box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%);
-	-webkit-box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%);
+	
 	display: flex;
 	flex-direction: inherit;
 	align-items: center;
@@ -6070,7 +6065,7 @@ ul.applieded_list li .nore_applied span {
 	overflow: hidden;
 	background: #fff;
 	box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%);
-	-webkit-box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%)
+	
 }
 
 ._large_jb_header {
@@ -6291,7 +6286,7 @@ ul.applieded_list li .nore_applied span {
 	overflow: hidden;
 	background: #fff;
 	box-shadow: 0 0 12px 0 rgb(62 28 131 / 10%);
-	-webkit-box-shadow: 0 0 12px 0 rgb(62 28 131 / 10%)
+	
 }
 
 .accordion .card {
@@ -6546,7 +6541,7 @@ a.btn.bat-call-to-act {
 	transition: all ease-in-out .4s;
 	margin-top: 25px;
 	box-shadow: 0 0 0 5px rgb(255 255 255 / 20%);
-	-webkit-box-shadow: 0 0 0 5px rgb(255 255 255 / 20%)
+	
 }
 
 .dark-2 a.btn.bat-call-to-act {
@@ -6767,7 +6762,7 @@ a.btn.bat-call-to-act:hover {
 	border-radius: 50%;
 	overflow: hidden;
 	box-shadow: 0 0 0 5px #e9edf3;
-	-webkit-box-shadow: 0 0 0 5px #e9edf3;
+	
 	float: left;
 	margin-left: 6px
 }
@@ -6783,7 +6778,7 @@ a.btn.bat-call-to-act:hover {
 	border-radius: 50%;
 	overflow: hidden;
 	box-shadow: 0 0 0 5px rgba(255, 255, 255, .3);
-	-webkit-box-shadow: 0 0 0 5px rgba(255, 255, 255, .3);
+	
 	float: left
 }
 
@@ -7148,7 +7143,7 @@ ul.pricing_lists li:before {
 	border-radius: 6px;
 	overflow: hidden;
 	box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%);
-	-webkit-box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%)
+	
 }
 
 .form_row_header {
@@ -7212,8 +7207,7 @@ ul.pricing_lists li:before {
 .panel-default {
 	border-color: #eaeff5;
 	box-shadow: 0 0 10px 0 rgba(88, 96, 109, .1);
-	-webkit-box-shadow: 0 0 10px 0 rgba(88, 96, 109, .1);
-	-moz-box-shadow: 0 0 10px 0 rgba(88, 96, 109, .1)
+	
 }
 
 .panel-group .panel {
@@ -7309,7 +7303,7 @@ ul.pricing_lists li:before {
 	padding: 3em 0;
 	margin-bottom: 30px;
 	box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%);
-	-webkit-box-shadow: 0 0 20px 0 rgb(62 28 131 / 10%)
+	
 }
 
 .single-team {
@@ -7379,7 +7373,7 @@ ul.pricing_lists li:before {
 	border-radius: 6px;
 	padding: 1.2em 2em;
 	box-shadow: 0 0 20px 0 rgba(62, 28, 131, .1);
-	-webkit-box-shadow: 0 0 20px 0 rgba(62, 28, 131, .1)
+	
 }
 
 .icon-mi-left i {
@@ -8595,7 +8589,7 @@ ul.skilss li:before {
 	font-size: 14px;
 	font-weight: 600;
 	box-shadow: 0 0 0 5px rgb(255 255 255 / 20%);
-	-webkit-box-shadow: 0 0 0 5px rgb(255 255 255 / 20%)
+	
 }
 
 ._proposal_bids_single {
@@ -8822,7 +8816,7 @@ h5.qa-subtitle {
 	left: -15px!important;
 	top: 0;
 	box-shadow: 0 0 0 5px rgb(204 244 255);
-	-webkit-box-shadow: 0 0 0 5px rgb(204 244 255)
+	
 }
 
 ._cp_flexed {
@@ -8961,7 +8955,7 @@ label.custom-file-label:after {
 	margin-bottom: 30px;
 	position: relative;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1);
-	-webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, .1)
+	
 }
 
 .blog-thumb {
@@ -9074,7 +9068,7 @@ a.blog-cates-list.style-5 {
 	color: #333c56;
 	transition: all ease .4s;
 	box-shadow: 0 0 0 5px rgb(255 255 255 / 30%);
-	-webkit-box-shadow: 0 0 0 5px rgb(255 255 255 / 30%)
+	
 }
 
 .single-post-item {
@@ -11477,7 +11471,7 @@ ul.social li a {
 	display: inline-block;
 	background: #fff;
 	border-radius: 50%;
-	-webkit-box-shadow: 0 0 12px 0 rgba(71, 119, 244, .2);
+	
 	box-shadow: 0 0 12px 0 rgba(71, 119, 244, .2);
 	line-height: 40px;
 	text-align: center
