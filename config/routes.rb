@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   get '/myrequests' => 'requests#myrequests'
 
   get '/about_us' => 'pages#about_us'
+  get '/terms' => 'pages#terms'
   get '/faqs' => 'pages#faqs'
   get '/categories' => 'pages#category'
   get '/locations' => 'pages#location'

@@ -201,7 +201,7 @@
 						<div class="col-lg-7 col-md-9">
 							<div class="sec-heading">
 								<h2>Request<span class="theme-cl-2"> Open For Providers To Bid</span></h2>
-								<p>Get the most experience service providers to mini task for you right from the comfort of your home</p>
+								<p>Get the most experienced service providers to help with tasks right from the comfort of your home</p>
 							</div>
 						</div>
 					</div>
@@ -210,6 +210,7 @@
 						<div class="col-lg-12 col-md-12 col-sm-12">						
 							<!-- Single Item -->
 							<% @requests.each do |request| %>
+								<% if request.open?%>
 							<div class="_list_jobs_wraps shadow_0">
 								<div class="_list_jobs_f1ex first">
 									<div class="_list_110">
@@ -230,14 +231,18 @@
 								</div>
 								<div class="_list_jobs_f1ex">
 									<div class="_list_110_caption">
-										<h4 class="_jb_title">Open for bid</h4>
-										<div class="_emp_jb"><%#= request.open %></div>
+									 <% if request.open?%>
+										<h4 class="_jb_title">Accepting Bids</h4>
+									 <% else %>
+										<div class="_emp_jb">Request is closed</div>
+									<% end %>
 									</div>
 								</div>
 								<div class="_list_jobs_f1ex">
 								<%= link_to request.title, request, class: "_jb_apply" %>
 								</div>
 							</div>
+							<% end %>
 							<% end %>
 						</div>
 					</div>

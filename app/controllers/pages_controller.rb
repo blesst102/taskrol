@@ -12,6 +12,9 @@ class PagesController < ApplicationController
   def location
 
   end 
+  def terms
+    
+  end
 
   def about_us
     

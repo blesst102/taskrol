@@ -1,28 +1,38 @@
-<%= form_with(model: review) do |form| %>
-  <% if review.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
+<div class="modal modal-signin position-static d-block bg-light py-5" tabindex="-1" role="dialog" id="modalSignin">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content rounded-5 shadow">
+      <div class="modal-header p-5 pb-4 border-bottom-0">
+        <h2 class="fw-bold mb-0">Add Review</h2>
+      </div>
 
-      <ul>
-        <% review.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+      <div class="modal-body p-5 pt-0">
+        <form class="">
+        <%= form_with(model: review) do |form| %>
+          <% if review.errors.any? %>
+            <div id="error_explanation">
+              <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
+        
+              <ul>
+                <% review.errors.each do |error| %>
+                  <li><%= error.full_message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="form-floating mb-3">
+          <%= form.number_field :rating, class: 'form-control rounded-4'%>
+            <label for="floatingInput">Eg. 1, 2, 3 etc.</label>
+          </div>
+          <div class="form-floating mb-3">
+          <%= form.text_area :comment, class: 'form-control' %>
+           <label for="floatingPassword">Comment</label>
+          </div>
+          <%= form.submit class: 'btn btn-warning' %>
+          <% end %>
+        </form>
+      </div>
     </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :rating %>
-    <%= form.number_field :rating %>
   </div>
-
-  <div class="field">
-    <%= form.label :comment %>
-    <%= form.text_area :comment %>
-  </div>
+</div>
 
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
