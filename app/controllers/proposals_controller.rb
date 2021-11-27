@@ -8,6 +8,7 @@ class ProposalsController < ApplicationController
     @proposal.user_id = current_user.id
     
     if @proposal.save
+      BidMailer.bid_made(@request.user,@proposal.user,@proposal.description).deliver
         redirect_to @proposal.request, notice: "Message was successfully sent to requester."
       else
         redirect_to @proposal.request, notice: "You can only submit one proposal for a request"

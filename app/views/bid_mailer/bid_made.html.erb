@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Hello, <%= @request_user.lastname %></h1>
+    <p>
+      A Tasker(Krol) called <%= @proposal_user.lastname %> <%= @proposal_user.firstname %> has responded to your request<br>
+    </p>
+    <p>
+    <%= @description %>
+    </p>
+    <p>Please login and confirm tasker if you are satisfied!</p>
+  </body>
+</html>

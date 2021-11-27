@@ -33,6 +33,8 @@ class RequestsController < ApplicationController
     @request = Request.new(request_params)
     @request.user = current_user
      if @request.save
+
+     TaskMailer.task_made(@request.user).deliver
      redirect_to @request
      else
        render :new
