@@ -76,7 +76,14 @@
           </div>
           <div  id="form1" style="display:none;">
           <div class="form-group">
-            <%= f.text_field :skills, class: 'form-control', placeholder: 'Skills' %>
+          <label>Skills</label>
+          <div class="form-check form-switch">
+          <% Skill.all.each do |skill| %>
+            <%= check_box_tag "user[skill_ids][]", skill.id %>
+            <%= skill.title %><br>
+            <% end %>
+          </div>
+            <%#= f.text_field :skills, class: 'form-control', placeholder: 'Skills' %>
           </div>
 
             <%= f.hidden_field :photo, class:"form-control", readonly: "true", value: 'uncertified' %>

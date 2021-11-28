@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   resources :pages
 
   get '/myrequests' => 'requests#myrequests'
+  get '/feed' => 'requests#feed'
 
   get '/about_us' => 'pages#about_us'
   get '/terms' => 'pages#terms'

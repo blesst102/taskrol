@@ -114,7 +114,9 @@
                                                     <div class="_dash_usr_actioned">
                                                         <ul>
                                                             <li>
-                                                            <i class="fa fa-handshake-o"></i> <%= user.skills %>
+                                                            <% if user.skills.any? %>
+                                                            <i class="fa fa-handshake-o"></i> <%= render user.skills %>
+                                                            <% end %>
                                                             </li>
                                                                 
                                                         </ul>																

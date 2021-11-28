@@ -1,0 +1,101 @@
+		
+			<!-- ============================ Page Title Start================================== -->
+			<div class="page-title bg-cover" style="background:#009688;" data-overlay="5" id="cover">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12"></div>
+					</div>
+				</div>
+			</div>
+			<!-- ============================ Page Title End ================================== -->
+			
+			<!-- ============================ Main Section Start ================================== -->
+			<section class="gray-bg pt-4">
+				<div class="container-fluid">
+         <%= render 'layouts/sidebar' %>
+						
+						<!-- Item Wrap Start -->
+						<div class="col-xl-9 col-lg-8 col-md-12 col-sm-12">
+							<div class="row">
+								<div class="col-lg-12 col-md-12 col-sm-12">
+									<!-- Breadcrumbs -->
+									<div class="bredcrumb_wrap">
+										<nav aria-label="breadcrumb">
+										  <ol class="breadcrumb">
+											<li class="breadcrumb-item"><a href="#">Home</a></li>
+											<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+										  </ol>
+										</nav>	
+									</div>
+								</div>
+							</div>
+                            <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                
+                                <!-- Single Wrap -->
+                                <div class="_dashboard_content">
+                                    <div class="_dashboard_content_header">
+                                        <div class="_dashboard__header_flex">
+                                            <h4><i class="fa fa-user mr-1"></i>Recent Requests Based On Your Skills</h4>	
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="_dashboard_content_body">
+                                    <div class="row">
+                                    <div class="col-lg-12 col-md-12 col-sm-12">						
+                                      <!-- Single Item -->
+                                      <% @requests.each do |request| %>
+                                      <div class="_list_jobs_wraps shadow_0">
+                                        <div class="_list_jobs_f1ex first">
+                                          <div class="_list_110">
+                                            <div class="_list_110_thumb">
+                                              <a href="#"><%= image_tag(image_path('c-4.png'), class: 'img-fluid') %></a>
+                                            </div>
+                                            <div class="_list_110_caption">
+                                              <h4 class="_jb_title"><a href="#"><%= request.title %></a></h4>
+                                              <div class="_emp_jb"><%= request.category.range %></div>
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div class="_list_jobs_f1ex">
+                                          <div class="_list_110_caption">
+                                            <h4 class="_jb_title"><%= request.streetname %>, <%= request.landmark %>, <%= request.housenumber %></h4>
+                                            <div class="_emp_jb"><%= request.date %>| <%= request.time.strftime("%I:%m %p") %></div>
+                                          </div>	
+                                        </div>
+                                        <div class="_list_jobs_f1ex">
+                                          <div class="_list_110_caption">
+                                            <h4 class="_jb_title">Skills Rquired</h4>
+                                            <% if request.skills.any? %>
+                                            <div class="_emp_jb">
+                                            <%= render request.skills %>
+                                          </div>
+                                          <% end %>
+                                          </div>
+                                        </div>
+                                        <div class="_list_jobs_f1ex">
+                                        <%= link_to request.title, request, class: "_jb_apply" %>
+                                        </div>
+                                      <% end %>
+                                      
+                                    </div>
+                                  </div>
+                                  
+                                </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Single Wrap End -->
+                                
+                            </div>
+                        </div>
+                  
+                  </div>
+                </div>
+
+						
+</div>
+</div>
+</section>
+

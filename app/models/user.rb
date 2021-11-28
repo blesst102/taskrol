@@ -8,6 +8,12 @@ class User < ApplicationRecord
          has_many :requests
          has_many :proposals
          has_many :reviews
+         has_many :user_skills, dependent: :destroy
+         has_many :skills, through: :user_skills
+
+
+
+
 
          has_one_attached :avatar
 

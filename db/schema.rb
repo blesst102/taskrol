@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_21_113732) do
+ActiveRecord::Schema.define(version: 2021_11_28_131516) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -60,6 +60,15 @@ ActiveRecord::Schema.define(version: 2021_11_21_113732) do
     t.index ["user_id"], name: "index_proposals_on_user_id"
   end
 
+  create_table "request_skills", force: :cascade do |t|
+    t.integer "request_id", null: false
+    t.integer "skill_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["request_id"], name: "index_request_skills_on_request_id"
+    t.index ["skill_id"], name: "index_request_skills_on_skill_id"
+  end
+
   create_table "requestoptions", force: :cascade do |t|
     t.string "title"
     t.string "description"
@@ -107,6 +116,22 @@ ActiveRecord::Schema.define(version: 2021_11_21_113732) do
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource"
   end
 
+  create_table "skills", force: :cascade do |t|
+    t.string "title"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_skills", force: :cascade do |t|
+    t.string "title"
+    t.integer "user_id", null: false
+    t.integer "skill_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["skill_id"], name: "index_user_skills_on_skill_id"
+    t.index ["user_id"], name: "index_user_skills_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "firstname"
     t.string "lastname"
@@ -150,8 +175,12 @@ ActiveRecord::Schema.define(version: 2021_11_21_113732) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "proposals", "requests"
   add_foreign_key "proposals", "users"
+  add_foreign_key "request_skills", "requests"
+  add_foreign_key "request_skills", "skills"
   add_foreign_key "requests", "categories"
   add_foreign_key "requests", "requestoptions"
   add_foreign_key "requests", "users"
   add_foreign_key "reviews", "users"
+  add_foreign_key "user_skills", "skills"
+  add_foreign_key "user_skills", "users"
 end

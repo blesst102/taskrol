@@ -71,10 +71,12 @@
                                                         
                                                         <div class="_dash_usr_actioned">
                                                             <ul>
+                                                            <% if current_user.has_role?(:admin) %>
                                                                 <li><%= link_to edit_request_path(request), class: 'btn btn-outline-success' do %>
                                                                 <i class="fa fa-check"></i>Edit
                                                                 <% end %>
                                                                 </li>
+                                                            <% end %>
                                                                 <%= button_to request_path(request), method: :delete, data: {confirm: "Are you sure?"}, class: 'btn btn-outline-success' do %>
                                                                     <i class="fa fa-trash"></i>Delete
                                                                     <% end %>

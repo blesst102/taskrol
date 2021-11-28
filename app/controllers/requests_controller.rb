@@ -22,8 +22,8 @@ class RequestsController < ApplicationController
   # GET /requests/1/edit
   def edit
     @request = Request.find_by(title: params[:id])
-      if current_user != @request.user
-    flash[:error] = "You are not the owner of this task!"
+    if current_user.has_role?(:admin)
+    flash[:error] = "You are not authorised to change the request terms kindly delete if you still want to!"
     redirect_to @request
    end
   end
@@ -63,6 +63,18 @@ class RequestsController < ApplicationController
     redirect_to :myrequests
   end
 
+  def feed
+    @my_interests = current_user.skill_ids
+
+    #check if the authenticated user has any interests
+    if @my_interests.any?
+      @requests = Request.select { |r| (r.skill_ids & @my_interests).any? }
+    else
+      #load all the posts if the authenticated user has not specified any interests
+      @requests = Request.all
+    end
+  end
+
   def myrequests
     @requests = Request.where(user_id: current_user).order(created_at: :asc)
   end
@@ -75,6 +87,6 @@ class RequestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def request_params
-      params.require(:request).permit(:title, :category_id, :requestoption_id, :streetname, :landmark, :housenumber, :description, :date, :time, :open, :awarded_proposal)
+      params.require(:request).permit(:title, :category_id, :requestoption_id, :streetname, :landmark, :housenumber, :description, :date, :time, :open, :awarded_proposal, skill_ids: [])
     end
 end

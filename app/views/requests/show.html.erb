@@ -33,9 +33,17 @@
 										<i class="fa fa-bell" aria-hidden="true"></i><span class="good"></span>
 									<% end %>
 									</li>
+									<% if current_user.has_role?(:admin) %>
 									<li>
 									<%= link_to requests_path, class: 'nav-link' do %>
-                                         Requests
+                                         Requests Made
+										<i class="fa fa-bell" aria-hidden="true"></i><span class="good"></span>
+									<% end %>
+									</li>
+									<% end %>
+									<li>
+									<%= link_to feed_path, class: 'nav-link' do %>
+                                         My Jobs
 										<i class="fa fa-bell" aria-hidden="true"></i><span class="good"></span>
 									<% end %>
 									</li>

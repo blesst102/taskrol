@@ -24,19 +24,28 @@
             </div>
             
             <div class="d-navigation">
-              <ul id="metismenu" class="metismenu">
-                <li><%= link_to myrequests_path, class: 'nav-link' do %>
-                   Manage Requests
-                  <i class="fa fa-bell" aria-hidden="true"></i><span class="good"></span>
-                <% end %>
-                </li>
-                <li>
-                <%= link_to requests_path, class: 'nav-link' do %>
-                    Requests
-                  <i class="fa fa-bell" aria-hidden="true"></i><span class="good"></span>
-                <% end %>
-                </li>
-              </ul>
+			<ul id="metismenu" class="metismenu">
+			<li><%= link_to myrequests_path, class: 'nav-link' do %>
+				<i class="fa-envelope-open-o"></i>Manage Requests
+				<i class="fa fa-bell" aria-hidden="true"></i>
+			   <% end %>
+			</li>
+			<% if current_user.has_role?(:admin) %>
+			<li>
+			<%= link_to requests_path, class: 'nav-link' do %>
+				 Requests Made
+				<i class="fa fa-bell" aria-hidden="true"></i><span class="good"></span>
+			<% end %>
+			</li>
+			<% end %>
+			<li>
+			<%= link_to feed_path, class: 'nav-link' do %>
+				 My Jobs
+				<i class="fa fa-bell" aria-hidden="true"></i><span class="good"></span>
+			<% end %>
+			</li>
+			<li><%= link_to 'Sign out', destroy_user_session_path, :method => :delete, class: 'nav-link' %></li>
+		</ul>
             </div>
             
           </div>
@@ -131,8 +140,11 @@
 								<div class="row">
 									<div class="col-xl-6 col-lg-6">
 										<div class="form-group">
-				<label>Skills</label>
-				<%= f.text_field :skills, autofocus: true, autocomplete: "skills", class: 'form-control with-light' %>
+										<label>Select the skill required</label><br>
+										<% Skill.all.each do |skill| %>
+										  <%= check_box_tag "user[skill_ids][]", skill.id %>
+										  <%= skill.title %><br>
+										<% end %>
 										</div>
 									</div>
 									<div class="col-xl-6 col-lg-6">
