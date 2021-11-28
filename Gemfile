@@ -36,6 +36,7 @@ gem 'devise'
 gem 'kaminari'
 gem "rolify"
 gem "aws-sdk-s3", require: false
+gem "pundit"
 #gem 'public_activity'
 
 

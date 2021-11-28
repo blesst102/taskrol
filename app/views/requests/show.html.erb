@@ -174,6 +174,7 @@
 									<!-- Single Wrap End -->
 									<% if user_signed_in? && @request.user != current_user %>
 									<% if @request.open == true %>
+									<% if current_user.has_any_role?(:admin, :certified, :krol) %>
 									<%= form_for :proposal, url: request_proposals_path(@request) do |f| %>
 									<div class="form_row_box_body">
 									<%= render 'layouts/notices' %>
@@ -206,7 +207,8 @@
 										</div>
 											<% end %>
 											<% else %>
-											 Request has been closed
+											<% end %>
+											
 											<% end %>
 
 											<% elsif @request.user == current_user && @request.open == true %>
