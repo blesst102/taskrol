@@ -12,6 +12,7 @@ class RequestsController < ApplicationController
     @user = User.all
     @proposals = @request.proposals.order(created_at: :desc)
     @awarded_proposal = Proposal.where(id: @request.awarded_proposal).first
+    @user_skills = UserSkill.all
   end
 
   # GET /requests/new

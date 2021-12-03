@@ -98,6 +98,7 @@
 								  <li><span><i class="fa fa-map-pin"></i><%= @request.streetname %> | <%= @request.landmark %>| <%= @request.housenumber %></span></li>
 								  <li><span><i class="fa fa-clock"></i><%= @request.date %> | <%= @request.time.strftime("%I:%m %p") %></span></li>
 								  <li><span><i class="fa fa-briefcase"></i><%= @request.requestoption.title %></span></li>
+								  <%#= @request.request_skills %>
 							  </ul>
 							  <ul class="_action_grouping_list">
 								<p><%= @request.description %></p>
@@ -140,7 +141,7 @@
 														<%= proposal.user.firstname %></h4>
 														<span class="_elopi_designation">Bid: <%= proposal.created_at.strftime("%b %d, %Y") %></span>
 														<ul class="_action_grouping_list">
-														<p>Skills: <%= proposal.user.skills %></p></br>
+														<p><%#= proposal.user_skills %></p></br>
 														<p><%= proposal.description %>	</p>
 														</ul>
 													</div>
@@ -233,7 +234,7 @@
 													<% end %><br><br>
 													Hello, my name is <%= @awarded_proposal.user.firstname %> <%= @awarded_proposal.user.lastname %><br> a (certified krol) on 
 													taskrol.com . Thank you for hiring me to help you with your work<br><br>
-													<span>Skills: <%= @awarded_proposal.user.skills %><span><br><br>
+													<span>Location: <%#= @awarded_proposal.user.skills %><%= @awarded_proposal.user.location %><span><br><br>
 													<span>Click button below<span>
 													<br><br><span><a class="btn btn-success" href="https://wa.me/<%= @awarded_proposal.user.phone %>?text=I'm%20interested%20in%20your%20services: ">Lets Chat <%= @awarded_proposal.user.phone %></a><span><br>
 													</h6>

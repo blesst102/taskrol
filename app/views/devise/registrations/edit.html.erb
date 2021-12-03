@@ -142,7 +142,7 @@
 										<div class="form-group">
 										<label>Select the skill required</label><br>
 										<% Skill.all.each do |skill| %>
-										  <%= check_box_tag "user[skill_ids][]", skill.id %>
+										  <%= check_box_tag "user[skill_ids.include?(skill.id)][]", skill.id %>
 										  <%= skill.title %><br>
 										<% end %>
 										</div>
