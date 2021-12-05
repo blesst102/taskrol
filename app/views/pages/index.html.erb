@@ -96,11 +96,11 @@
 							</div>
 						</div>
 					</div>
-					<div class="row justify-content-center">
+					<div class="row align-items-center h-100">
 					
 						<!-- Single category -->
 						<div class="col-lg-3 col-md-4 col-sm-6">
-						<div class="card" style="width:300px">
+						<div class="card" style="width:300px" id="home-card">
 						<%= image_tag(image_path('plumbing.jpg'), class: 'card-img-top', style: 'width:100%') %>
 							<div class="card-body">
 							<h5 class="card-title">Handyman</h5>
@@ -111,7 +111,7 @@
 						
 						<!-- Single category -->
 						<div class="col-lg-3 col-md-4 col-sm-6">
-						<div class="card" style="width:300px">
+						<div class="card" style="width:300px" id="home-card">
 						<%= image_tag(image_path('cctv.jpg'), class: 'card-img-top', style: 'width:100%') %>
 							<div class="card-body">
 							<h5 class="card-title">CCTV & Electricals</h5>
@@ -122,7 +122,7 @@
 						
 						<!-- Single category -->
 						<div class="col-lg-3 col-md-4 col-sm-6">
-						<div class="card" style="width:300px">
+						<div class="card" style="width:300px" id="home-card">
 						<%= image_tag(image_path('errands.png'), class: 'card-img-top', style: 'width:100%') %>
 							<div class="card-body">
 							<h5 class="card-title">Errands</h5>
@@ -133,7 +133,7 @@
 						
 						<!-- Single category -->
 						<div class="col-lg-3 col-md-4 col-sm-6">
-						<div class="card" style="width:300px">
+						<div class="card" style="width:300px" id="home-card">
 						<%= image_tag(image_path('photography.jpg'), class: 'card-img-top', style: 'width:100%') %>
 							<div class="card-body">
 							<h5 class="card-title">Photography</h5>
@@ -144,7 +144,7 @@
 						
 						<!-- Single category -->
 						<div class="col-lg-3 col-md-4 col-sm-6">
-						<div class="card" style="width:300px">
+						<div class="card" style="width:300px" id="home-card">
 						<%= image_tag(image_path('garbage.jpg'), class: 'card-img-top', style: 'width:100%') %>
 							<div class="card-body">
 							<h5 class="card-title">Waste Pickup</h5>
@@ -155,7 +155,7 @@
 						
 						<!-- Single category -->
 						<div class="col-lg-3 col-md-4 col-sm-6">
-						<div class="card" style="width:300px">
+						<div class="card" style="width:300px" id="home-card">
 						<%= image_tag(image_path('janitors.jpg'), class: 'card-img-top', style: 'width:100%') %>
 							<div class="card-body">
 							<h5 class="card-title">Janitors</h5>
@@ -166,7 +166,7 @@
 						
 						<!-- Single category -->
 						<div class="col-lg-3 col-md-4 col-sm-6">
-						<div class="card" style="width:300px">
+						<div class="card" style="width:300px" id="home-card">
 						<%= image_tag(image_path('repairs.jpg'), class: 'card-img-top', style: 'width:100%') %>
 							<div class="card-body">
 							<h5 class="card-title">Phone & PC Repairs</h5>
@@ -177,7 +177,7 @@
 						
 						<!-- Single category -->
 						<div class="col-lg-3 col-md-4 col-sm-6">
-						<div class="card" style="width:300px">
+						<div class="card" style="width:300px" id="home-card">
 						<%= image_tag(image_path('webdesigne.jpg'), class: 'card-img-top', style: 'width:100%') %>
 							<div class="card-body">
 							<h5 class="card-title">Web Design & IT</h5>
@@ -263,7 +263,7 @@
 						<div class="col-lg-7 col-md-6">
 							<div class="_setup_process">
 								<h2>How it <span class="theme-cl-2">Works</span></h2>
-								<p>Use our app, in 3 steps you are on course for your service being rendered</p>
+								<p>Use our app, in 4 steps you are on course for your service being rendered</p>
 							</div>
 							<div class="row">
 						
@@ -274,7 +274,7 @@
 										</div>
 										<div class="yel_7bcx">
 											<h4>Get introduced to experts</h4>
-											<p>Make a resquest of the services you need and trust us to get you a perfect match</p>									
+											<p>Make a request of the services you need and trust us to get you a perfect match</p>									
 										</div>
 									</div>
 								</div>
@@ -298,8 +298,7 @@
 										</div>
 										<div class="yel_7bcx">
 											<h4>Hire the right expert</h4>
-											<p>A list of all the interested candidates will show up in your dashbaord with their details. Get the 
-											number of the expert you wish to hire
+											<p>A list of all the interested candidates will show up on your dashbaord with their details.
 											</p>									
 										</div>
 									</div>
@@ -312,8 +311,8 @@
 										</div>
 										<div class="yel_7bcx">
 											<h4>Close Request</h4>
-											<p>Once you have gotten the right expert. Click on award proposal beside the expert you wish to employ to award 
-											and close the request
+											<p>Once you have gotten the right expert. Click on accept bid beside the expert you wish to employ to confirm 
+											and select the expert you want
 											</p>									
 										</div>
 									</div>
@@ -348,14 +347,14 @@
 					<div class="col-md-4 col-sm-4">
 						<div class="working-process"><span class="process-img"><%= image_tag(image_path('step-2.png'), class: 'img-responsive') %><span class="process-num">02</span></span>
 							<h4>Settle Dispute</h4>
-							<p>If you are not satisfied or have any issue you can use the open by using the link on the menu and our
+							<p>If you are not satisfied or have any issue you can add a review and our
 							customer service will be ready to assist you</p>
 						</div>
 					</div>
 					<div class="col-md-4 col-sm-4">
 						<div class="working-process"><span class="process-img"><%= image_tag(image_path('step-3.png'), class: 'img-responsive') %><span class="process-num">03</span></span>
 							<h4>Privacy</h4>
-							<p>When you register with Miborla, your details will not be shared to any person.</p>
+							<p>When you register with Taskrol, your details will not be shared to any person.</p>
 						</div>
 					</div>
 				</div>
