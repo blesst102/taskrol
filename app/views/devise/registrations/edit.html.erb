@@ -138,6 +138,7 @@
 							
 							<div class="_dashboard_content_body">
 								<div class="row">
+								<% if current_user.has_any_role?(:admin, :certified) %>
 									<div class="col-xl-6 col-lg-6">
 										<div class="form-group">
 										<label>Select the skill required</label><br>
@@ -147,6 +148,7 @@
 										<% end %>
 										</div>
 									</div>
+									<% end %>
 									<div class="col-xl-6 col-lg-6">
 										<div class="form-group">
 											<label>Location</label>
