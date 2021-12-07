@@ -1,18 +1,18 @@
 		
-			<!-- ============================ Page Title Start================================== -->
-			<div class="page-title bg-cover" style="background:white;" data-overlay="5" id="cover">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12 col-md-12"></div>
-					</div>
-				</div>
-			</div>
-			<!-- ============================ Page Title End ================================== -->
-			
-			<!-- ============================ Main Section Start ================================== -->
-			<section class="gray-bg pt-4">
-				<div class="container-fluid">
-        <div class="row m-0">
+<!-- ============================ Page Title Start================================== -->
+<div class="page-title bg-cover" style="background:white;" data-overlay="5" id="cover">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12"></div>
+		</div>
+	</div>
+</div>
+<!-- ============================ Page Title End ================================== -->
+
+	<!-- ============================ Main Section Start ================================== -->
+	<section class="gray-bg pt-4">
+		<div class="container-fluid">
+       <div class="row m-0">
 						
         <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12">
           <div class="dashboard-navbar overlio-top">
@@ -68,6 +68,8 @@
 				</div>
 			</div>
      <div class="row">
+     			<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+				<%= render "devise/shared/error_messages", resource: resource %>
             <div class="col-lg-12 col-md-12 col-sm-12">
 				
 				<!-- Single Wrap -->
@@ -77,8 +79,6 @@
 							<h4><i class="fa fa-user mr-1"></i>My Account</h4>	
 						</div>
 					</div>
-					<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-				<%= render "devise/shared/error_messages", resource: resource %>
 					<div class="_dashboard_content_body">
 						<div class="row">
 							<div class="col-auto">
@@ -150,10 +150,12 @@
 									<div class="col-xl-6 col-lg-6">
 										<div class="form-group">
 											<label>Location</label>
-				<%= f.text_field :location, autofocus: true, autocomplete: "phone", class: 'form-control with-light' %>
-			</div>
+				<%= f.text_field :location, autofocus: true, autocomplete: "lastname", class: 'form-control', id: 'search_input'%>
+						          <input type="hidden" id="loc_lat" />
+						          <input type="hidden" id="loc_long" />
+			                          </div>
 									</div>
-		</div>
+		                         </div>
 						<!-- Single Wrap End -->
 						
 						<!-- Single Wrap -->
@@ -186,18 +188,15 @@
 									</div>
 								</div>
 							</div>
-		     <%= f.submit "Update", class: 'btn btn-success' %>							
+		            <%= f.submit class: 'btn btn-success' %>							
 						</div>
 						<!-- Single Wrap End -->
-	
-		<p><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: 'btn btn-danger' %> Unhappy? </p>
-		
-		<%= link_to "Back", :back, class: 'btn btn-outline-success' %>
+			
+		 <%= link_to "Back", :back, class: 'btn btn-outline-success' %>
 					</div>
-	<% end %>
-	</form>
-
+    </div>
 </div>
+<% end %>
 </div>
 </section>
 
@@ -235,6 +234,12 @@ autocomplete = new google.maps.places.Autocomplete((document.getElementById(sear
         country: "Ghana"
     }
 });
+
+$("#formButton").click(function(){
+        $("#form1").toggle();
+    });
+
+  
 </script>
 
 
