@@ -15,6 +15,7 @@
         <div class="row m-0">
 						
         <div class="col-xl-3 col-lg-4 col-md-12 col-sm-12">
+        <% if user_signed_in? %>
           <div class="dashboard-navbar overlio-top">
             
           <div class="d-user-avater">
@@ -53,6 +54,7 @@
             </div>
             
           </div>
+          <% end %>
         </div>
           
 						
@@ -64,8 +66,8 @@
 									<div class="bredcrumb_wrap">
 										<nav aria-label="breadcrumb">
 										  <ol class="breadcrumb">
-											<li class="breadcrumb-item"><a href="#">Home</a></li>
-											<li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+											<li class="breadcrumb-item"><a href="#">Dashboard</a></li>
+											<li class="breadcrumb-item active" aria-current="page">Request</li>
 										  </ol>
 										</nav>	
 									</div>
@@ -166,7 +168,7 @@
                       <div class="row">
                       <div class="col-xl-8 col-lg-12">
                         <div class="form-group">
-                          <label>Tell Us about your request</label>
+                          <label>Tell us soemthing brief about the service you need</label>
                           <%= form.text_area :description, class: 'form-control with-light' %>
                         </div>
                       </div>     
