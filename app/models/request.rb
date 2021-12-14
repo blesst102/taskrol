@@ -7,6 +7,7 @@ class Request < ApplicationRecord
   has_many :skills, through: :request_skills
 
   validates :title, presence: true
+
   paginates_per 20
   
 

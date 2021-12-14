@@ -7,11 +7,11 @@ class UsersController < ApplicationController
     end
 
     def index
-        if current_user.has_role?(:admin)
+        #if current_user.has_role?(:admin)
             @users = User.all
-        else
-            redirect_to root_path
-        end
+        #else
+            #redirect_to root_path
+        #end
     end
 
     def update

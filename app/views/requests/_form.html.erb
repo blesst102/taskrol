@@ -174,7 +174,7 @@
                       </div>     
                       <div class="col-xl-4 col-lg-12">
                         <div class="form-group">
-                          <label>Select the skill required</label><br>
+                          <label>Select expertise</label><br>
                           <% Skill.all.each do |skill| %>
                             <%= check_box_tag "request[skill_ids][]", skill.id %>
                             <%= skill.title %><br>
@@ -182,6 +182,7 @@
                         </div>
                       </div>                                            
                     </div>
+                    <p> You will need to sign up or sign in to complete your process</p>
                     <%= form.submit "Get Help", class: 'btn btn-success btn-lg' %>
                   </div>
                 </div>

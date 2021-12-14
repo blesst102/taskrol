@@ -37,6 +37,8 @@ gem 'kaminari'
 gem "rolify"
 gem "aws-sdk-s3", require: false
 gem "pundit"
+gem 'meta-tags'
+
 
 #gem 'public_activity'
 
