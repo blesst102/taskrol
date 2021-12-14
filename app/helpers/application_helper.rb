@@ -26,8 +26,8 @@ module ApplicationHelper
 
         def default_meta_tags
           {
-            site: 'Taskrol.com',
-            title: 'TasKrol',
+            site: 'Trusted And Certified Krols For You',
+            title: 'Taskrol',
             reverse: true,
             separator: '|',
             description: 'taskrol is an online service platform that instantly connects you with skilled Taskers to help with cleaning, handyman services, electronic repairs, running errands and more',
