@@ -138,7 +138,7 @@
 														<% else %>
 														<%= image_tag(image_path('c-4.png'), class: 'rounded-circle', width: '200px') %>
 														<% end %>
-														<%= proposal.user.firstname %></h4>
+														<%= link_to user.lastname, user %>/h4>
 														<span class="_elopi_designation">Bid: <%= proposal.created_at.strftime("%b %d, %Y") %></span>
 														<ul class="_action_grouping_list">
 														<p><%#= proposal.user_skills %></p></br>

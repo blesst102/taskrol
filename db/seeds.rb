@@ -42,5 +42,5 @@ Skill.create!(title: "Laptop repairs")
 Skill.create!(title: "Art & Design")
 Skill.create!(title: "Mechanic")
 Skill.create!(title: "Driving")
-
+Skill.create!(title: "Electronic repairs")
 

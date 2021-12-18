@@ -1,0 +1,95 @@
+<section class="gray-bg">
+				<div class="container">
+					<div class="row">
+
+						<!-- Item Wrap Start -->
+						<div class="col-lg-8 col-md-12 col-sm-12">
+							<div class="_job_detail_box">
+								
+								<div class="_wrap_box_slice">
+									<div class="_job_detail_single">
+										<h4>About User</h4>
+										<p>Certified krol who works hard to achieve greate outcome</p>
+									</div>
+
+								</div>
+
+								<!-- Completed Projects -->
+								<div class="_wrap_box_slice">
+									<div class="_job_detail_single">
+										<h4>Account History</h4>
+										<div class="row justify-content-center">
+									
+											<div class="col-lg-4 col-md-6 col-sm-12">
+												<div class="completed_projects">
+													<div class="completed_projects_thumb">
+														<img src="assets/img/co-2.jpg" class="img-fluid rounded" alt="">
+													</div>
+													<div class="_cp_flexed">
+														<div class="_cp_flexed_left">
+															<h5>Registered On</h5>
+															<span><%= @user.created_at %></span>
+														</div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="col-lg-4 col-md-6 col-sm-12">
+												<div class="completed_projects">
+													<div class="completed_projects_thumb">
+														<img src="assets/img/co-4.jpg" class="img-fluid rounded" alt="">
+													</div>
+													<div class="_cp_flexed">
+														<div class="_cp_flexed_left">
+															<h5>Activities</h5>
+															<span><%= @user.sign_in_count %></span>
+														</div>
+													</div>
+												</div>
+											</div>
+											
+											<div class="col-lg-4 col-md-6 col-sm-12">
+												<div class="completed_projects">
+													<div class="completed_projects_thumb">
+													</div>
+													<div class="_cp_flexed">
+														<div class="_cp_flexed_left">
+															
+														</div>
+													</div>
+												</div>
+											</div>
+											
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+						
+						<div class="col-lg-4 col-md-12 col-sm-12">
+							<div class="_jb_summary light_box">
+								<div class="_jb_summary_largethumb">
+									<%= image_tag(image_path('taskrol-bg.jpg'), class: 'img-fluid') %>
+								</div>
+								<div class="_jb_summary_thumb">
+                                <% if @user.avatar.attached? %>
+                                <%= image_tag @user.avatar, class: 'img-fluid circle' %>  
+                                <% else %>
+                                <%= image_tag(image_path('profile.svg'), class: 'img-fluid circle') %>
+                            <% end %>
+								</div>
+								<div class="_jb_summary_caption">
+									<h4><%= @user.firstname %> <%= @user.lastname %></h4>
+									<span><%= @user.location %></span>
+								</div>
+								<div class="_jb_summary_body">								
+								</div>
+							</div>
+							
+													
+						</div>
+						
+					</div>
+				</div>
+			</section>

@@ -30,6 +30,7 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
              <%= link_to "My Requests", myrequests_path, class: 'dropdown-item' %>
              <li><hr class="dropdown-divider"></li>
+             <li><%#= link_to "View Profile", user_path(@user), class: 'dropdown-item' %></li>
             <li><a class="dropdown-item" href="/"><%= current_user.roles.pluck(:name) %><br><%= current_user.firstname %> <%= current_user.lastname %></a></li>
             <li><%= link_to "Profile Settings", edit_user_registration_path, class: 'dropdown-item' %></li>
             <li><hr class="dropdown-divider"></li>

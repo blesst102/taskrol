@@ -69,88 +69,57 @@
 								</div>
 							</div>
 
-              
-                            <div class="row">
-                            <div class="col-lg-12 col-md-12 col-sm-12">
-                            <!-- Single Wrap -->
-                            <div class="_dashboard_content">
-                                <div class="_dashboard_content_header">
-                                    <div class="_dashboard__header_flex">
-                                        <h4><i class="fa fa-user mr-1"></i>Users</h4>	
-                                    </div>
-                                </div>
-                                
-                                <div class="_dashboard_content_body">
-                                    <div class="row">
-                                    <% @users.each do |user| %>   
-                                        <!-- Single List -->
-                                        <div class="col-xl-4 col-lg-6 col-md-6">
-                                            <div class="_dash_grid_box">
-                                                <div class="_dash_remove_wrap">
-                                                <div class="_dash_grid_box_thumb">
-                                                <% if user.avatar.attached? %>
-                                                <%= image_tag user.avatar, class: 'img-fluid circle', width: '30' %>  
-                                                <% else %>
-                                                <%= image_tag(image_path('profile.svg'), class: 'img-fluid circle', width: '30') %>
-                                                <% end %>
-                                                </div>
-                                                <div class="_dash_grid_box_caption">
-                                                    <span class="_elopi_location"><i class="fa fa-street-view mr-1"></i><%= user.location %></span>
-                                                    <h4 class="_elcio_title"><a href="#"><%= user.firstname %> <%= user.lastname %></a></h4>
-                                                    <div class="_dash_usr_rates">
-                                                        <span class="good">4.5</span>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                        <i class="fa fa-star"></i>
-                                                    </div>
-                                                    
-                                                    <div class="_dash_usr_bid_rate">
-                                                        <ul>
-                                                            <li><span>+233</span></li>
-                                                            <li><span><%= user.phone %></span></li>
-                                                        </ul>																
-                                                    </div>
-                                                    
-                                                    <div class="_dash_usr_actioned">
-                                                        <ul>
-                                                            <li>
-                                                            <% if user.skills.any? %>
-                                                            <i class="fa fa-handshake-o"></i> <%= render user.skills %>
-                                                            <% end %>
-                                                            </li>
-                                                                
-                                                        </ul>																
-                                                    </div>
-                                                </div>
-                                                <div class="_dash_usr_information">
-                                                <div class="single-widgets widget_tags">
-                                                    <h4 class="title">User Roles</h4>
-                                                    <ul>
-                                                      <li><% user.roles.each do |role| %>
-                                                        <%= link_to role.name %>
-                                                        <% end %>
-                                                      </li>
-                                                    </ul>
-                                                  </div>
-
-                                                    <ul>
-                                                    <li><%= link_to "Edit", edit_user_path(user), class: 'btn btn-outline-success' %></li>
-                                               
-                                            </ul>
-                                                </div>
-                                            </div>
-                                        </div>                                            
-                                    </div>
-                                    <% end %>
-                                </div>
-                            </div>
-                            <!-- Single Wrap End -->
-                            
-                        </div>
-                    </div>
-              
+              <div class="row">
+              <% @users.each do |user| %>
+								<!-- Single Item -->
+								<div class="col-lg-6 col-md-6 col-sm-12">
+									<div class="_freelacers_120 large shadow_0">
+										<div class="_freelancers_rate"><%= user.proposals.count %> | 
+                         <%= awarded_proposal.id %>
+                      </div>
+										<div class="_freelacers_120_thumb">
+                    <% if user.avatar.attached? %>
+                        <%= image_tag user.avatar, class: 'img-fluid circle' %>  
+                        <% else %>
+                        <%= image_tag(image_path('profile.svg'), class: 'img-fluid circle', width: '30') %>
+                    <% end %>
+										</div>
+										<div class="_freelacers_120_caption">
+											<div class="_freelan_laft"><i class="fa fa-street-view mr-1"></i><%= user.location %></div>
+											<h4><%= user.firstname %> <%= user.lastname %></h4><br>
+                      <h4><%= user.email %></h4>
+											<span class="_freel_spec"><%= user.phone %></span><br>
+                      <span class="_freel_spec"><%= user.voternumber %></span><br>
+                      <span class="_freel_spec"><%= user.last_sign_in_at %></span><br>
+                      <span class="_freel_spec"><%= user.current_sign_in_ip %></span><br>
+                      <span class="_freel_spec"><%= user.confirmed_at %></span><br>
+                      <span class="_freel_spec"><%= user.sign_in_count %></span>
+											<div class="_freelan_right"><strong><i class="fa fa-star mr-1"></i>4.9</strong></div>
+										</div>
+										<div class="_freelacers_120_body">
+											<div class="_free0o9">
+												<ul>
+                        <% if user.skills.any? %>
+                        <i class="fa fa-handshake-o"></i> <%= render user.skills %>
+                        <% end %>
+												</ul>
+											</div>
+                      <div class="_free0o9">
+												<ul>
+                        <li><% user.roles.each do |role| %>
+                          <span><%= link_to role.name %></span>
+                          <% end %>
+                        </li>
+												</ul>
+											</div>
+											<div class="_freelacers_121_foot">
+                         <%= link_to user.lastname, user %>
+											</div>
+										</div>
+									</div>
+								</div>
+								<% end %>
+							</div>
               </div>
             </div>
 

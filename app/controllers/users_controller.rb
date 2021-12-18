@@ -2,16 +2,24 @@ class UsersController < ApplicationController
     before_action :set_user, only: [:edit, :update]
     before_action :authenticate_user!
 
+    def show
+        @user = User.find(params[:id])
+    end 
+
     def edit
         authorize @user
     end
 
     def index
-        #if current_user.has_role?(:admin)
+        if current_user.has_role?(:admin)
             @users = User.all
-        #else
+            @proposals = Proposal.all
+            @requests = Request.all
+           
+
+        else
             #redirect_to root_path
-        #end
+        end
     end
 
     def update
