@@ -8,11 +8,11 @@
 			<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 			  <form class="">
 				<div class="form-floating mb-3">
-				<%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control rounded-4' %>
+				<%= f.email_field :email, autocomplete: "email", class: 'form-control rounded-4' %>
 				  <label for="floatingInput">Email address</label>
 				</div>
 				<div class="form-floating mb-3">
-				<%= f.password_field :password, autofocus: true, autocomplete: "password", class: 'form-control rounded-4' %>
+				<%= f.password_field :password, autocomplete: "password", class: 'form-control rounded-4' %>
 				  <label for="floatingPassword">Password</label>
 				</div>
 				<% if devise_mapping.rememberable? %>

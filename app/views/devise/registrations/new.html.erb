@@ -64,16 +64,16 @@
           <%= f.file_field :avatar, class: 'form-control-file', id: 'exampleFormControlFile1' %>
          </div>
           <div class="form-group">
-            <%= f.text_field :firstname, autofocus: true, autocomplete: "firstname", class: 'form-control', placeholder: 'Firstname' %>
+            <%= f.text_field :firstname, autocomplete: "firstname", class: 'form-control', placeholder: 'Firstname' %>
           </div>
 
 
           <div class="form-group">
-            <%= f.text_field :lastname, autofocus: true, autocomplete: "lastname", class: 'form-control', placeholder: 'Lastname' %>
+            <%= f.text_field :lastname, autocomplete: "lastname", class: 'form-control', placeholder: 'Lastname' %>
           </div>
 
           <div class="form-group">
-            <%= f.text_field :phone, autofocus: true, class: 'form-control', placeholder: 'Mobile Number' %>
+            <%= f.telephone_field :phone, class: 'form-control', placeholder: 'Mobile Number' %>
           </div>
           <div  id="form1" style="display:none;">
           <div class="form-group">
@@ -91,23 +91,23 @@
 
 
           <div class="form-group">
-            <%= f.text_field :voternumber, autofocus: true, autocomplete: "lastname", class: 'form-control', placeholder: 'Voter ID Number' %>
+            <%= f.text_field :voternumber, autocomplete: "lastname", class: 'form-control', placeholder: 'Voter ID Number' %>
           </div>
           </div>
         <div class="form-group">
-          <%= f.text_field :location, autofocus: true, autocomplete: "lastname", class: 'form-control', id: 'search_input'%>
+          <%= f.text_field :location, autocomplete: "lastname", class: 'form-control', id: 'search_input'%>
           <input type="hidden" id="loc_lat" />
           <input type="hidden" id="loc_long" />
         </div>
           <div class="form-group">
-            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: 'Email Address' %>
+            <%= f.email_field :email, autocomplete: "email", class: 'form-control', placeholder: 'Email Address' %>
           </div>
             <div class="form-group">     
               <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder: 'Password (Minimum 6 Characters)' %>
           </div>
        
           <div class="form-group">
-            <%= f.password_field :password_confirmation, autofocus: true, autocomplete: "password", class: 'form-control', placeholder: 'Repeat Password' %>
+            <%= f.password_field :password_confirmation, autocomplete: "password", class: 'form-control', placeholder: 'Repeat Password' %>
           </div>
         </div>
       <div class="form-group">
