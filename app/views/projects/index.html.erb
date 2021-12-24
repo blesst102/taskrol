@@ -1,0 +1,67 @@
+<div id="main-wrapper">
+		
+            <!-- ============================================================== -->
+            <!-- Top header  -->
+            <!-- ============================================================== -->
+            <!-- Start Navigation -->
+		
+			<!-- ============================ Page Title Start================================== -->
+			<div class="page-title">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 col-md-12">
+							
+							<h2 class="ipt-title">Premium Projects</h2>							
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- ============================ Page Title End ================================== -->
+			
+			<!-- ============================ Main Section Start ================================== -->
+			<section class="min-sec">
+				<div class="container">
+					<div class="row">
+          <% @projects.each do |project| %>
+						<!-- Single blog Grid -->
+						<div class="col-lg-4 col-md-4 col-sm-12">
+							<div class="blog-wrap-grid">
+								
+								<div class="blog-thumb">
+                <%= image_tag(image_path('taskrol-bg.jpg'), class: 'img-fluid') %>
+								</div>
+								
+								<div class="blog-info">
+									<span class="post-date"><%= project.user.lastname %></span>
+								</div>
+								
+								<div class="blog-body">
+									<h4 class="bl-title"><%= project.title %></h4>
+									<p><%= project.description %></p>
+								</div>
+								
+								<div class="blog-cates">
+									<ul>
+										<li><a href="#" class="blog-cates-list style-1">GH<%= project.budget %></a></li>
+                    <li><a href="#" class="blog-cates-list style-1"><%= project.duration %></a></li>
+										<li><a href="#" class="blog-cates-list style-2"><%= project.location %></a></li>                   
+										<li><a href="#" class="blog-cates-list style-2"><%= project.expert %></a></li>
+									</ul>
+            
+								</div>
+								<td><%= link_to 'Show', project, class: 'btn btn-outline-info' %></td>
+                <td><%= link_to 'Edit', edit_project_path(project), class: 'btn btn-outline-success' %></td>
+                <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
+							</div>
+						</div>
+            <% end %>
+					</div>
+				</div>
+			</section>
+			<!-- ============================ Main Section End ================================== -->
+	
+				
+				
+
+		</div>
+

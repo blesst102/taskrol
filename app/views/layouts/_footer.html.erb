@@ -1,24 +1,27 @@
-				
-			<!-- ============================ Call To Action Start ================================== -->
-			<section class="call-to-act" style="background:#009688">
-				<div class="container">
-					<div class="row justify-content-center">
-					
-						<div class="col-lg-7 col-md-8">
-							<div class="clt-caption text-center mb-4">
-								<h3 class="text-light">Subscribe Now!</h3>
-								<p class="text-light">Simple pricing plans. Unlimited waste management and errand services</p>
-							</div>
-							<div class="inner-flexible-box subscribe-box">
-								<div class="input-group">
-									<input type="text" class="form-control large" placeholder="Enter your mail here">
-									<button class="btn btn-subscribe bg-dark" type="button"><i class="fa fa-arrow-right"></i></button>
-								</div>
-							</div>
-						</div>				
-					</div>
-				</div>
-			</section>
+
+			<!-- ============================ Call To Action Start ================================== -->			
+			<section id="features" class="products section guaranteed-wrapper pb-0">
+            <div class="container">
+                <div class="promotion-wrapper">
+				<%= image_tag(image_path('satisfaction-guarantee.png'), class: 'ds-guarantee-icon') %>
+                       <div class="ds-guarantee-text">
+                          <h2 class="basic ds-guarantee-title">Satisfaction</h2>
+                          <h3 class="basic ds-guarantee-desc">Taskrol ensures that your project is done well.</h3><br>
+                          <div class="page-content page-container" id="page-content">
+                          <div class="padding">
+                            <div class="row container d-flex justify-content-center">
+                              <div class="template-demo mt-2 px-1"> <button class="btn btn-outline-dark btn-icon-text"> 
+                              <i class="fab fa-apple btn-icon-prepend mdi-36px"></i> <span class="d-inline-block text-left"> 
+                              <small class="font-weight-light d-block">Available on the</small> App Store </span> </button> 
+                              <button class="btn btn-outline-dark btn-icon-text"> <i class="fab fa-android btn-icon-prepend mdi-36px"></i>
+                               <span class="d-inline-block text-left"> <small class="font-weight-light d-block">Get it on the</small> Google Play </span> </button> </div>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 			<!-- ============================ Call To Action End ================================== -->
 			
 			<!-- =========================== Footer Start ========================================= -->
@@ -101,3 +104,489 @@
 				</div>
 			</footer>
 			<!-- =========================== Footer End ========================================= -->
+
+		<style>
+		body {
+  font-family: Raleway, arial, sans-serif;
+  /*font-family: 'Josefin Slab', serif;*/
+  /*font-family: 'Oswald', sans-serif;*/
+  color: #444444;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, a, p{
+  font-family: Raleway, arial, sans-serif;
+  /*font-family: 'Josefin Slab', serif;*/
+}
+
+p {
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+a {
+  color: #28BD8B;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+a:hover {
+  text-decoration: none;
+  color: #28BD8B;
+}
+a:focus {
+  text-decoration: none;
+}
+.btn,
+a.btn {
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+  font-weight: bold;
+}
+.btn .fa,
+a.btn .fa {
+  color: #fff;
+  margin-right: 5px;
+}
+a.btn-cta,
+.btn-cta {
+  padding: 8px 30px;
+}
+a.btn-cta-primary,
+.btn-cta-primary {
+  background: #ec6952;
+  border: 2px solid #ec6952;
+  color: #fff;
+}
+a.btn-cta-primary:hover,
+.btn-cta-primary:hover {
+  background: #e9553b;
+  border: 2px solid #e9553b;
+  color: #fff;
+}
+a.btn-cta-secondary,
+.btn-cta-secondary {
+  background: none;
+  border: 2px solid #ec6952;
+  color: #ec6952;
+}
+a.btn-cta-secondary:hover,
+.btn-cta-secondary:hover {
+  background: #ec6952;
+  border: 2px solid #ec6952;
+  color: #fff;
+}
+a.btn-ghost,
+.btn-ghost {
+  background: none;
+  border: 1px solid #fff;
+  color: #fff !important;
+  padding: 8px 20px;
+  vertical-align: middle;
+}
+a.btn-ghost:hover,
+.btn-ghost:hover {
+  background: #4a6781;
+  border: 1px solid #4a6781;
+  color: #fff;
+}
+a.btn-ghost .fa,
+.btn-ghost .fa {
+  margin-right: 10px;
+  font-size: 22px;
+}
+a.btn-ghost .text,
+.btn-ghost .text {
+  position: relative;
+  top: -2px;
+}
+.highlight {
+  color: #ec6952;
+}
+
+
+
+
+.promotion-wrapper{
+   text-align: center;
+   
+}
+
+.promotion-wrapper img{
+     margin: 10px auto;
+}
+
+
+
+
+
+.promotional-text {
+    text-align: center;
+    font-weight: bold;
+}
+
+
+.promotional-text img {
+    width: 42px;
+    margin-right: 16px;
+}
+ 
+
+.promotional-text span{
+    text-align: center;
+    font-weight: bold;
+    color: #FFC107;
+}
+
+
+
+
+
+
+
+.pricing-wrapper {
+    background: #ffffff;
+    border-bottom: 1px solid #e8e8e8;
+    border-top: 1px solid #e8e8e8;
+}
+
+.guaranteed-wrapper {
+    background: #ffffff;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 20px !important;
+}
+
+
+.promotion-wrapper{
+    background: #28BD8B url("<%= asset_path('satisfaction-guarantee-bg.png') %>") no-repeat;
+    border: 3px dashed #fff;
+    padding: 30px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    -ms-border-radius: 6px;
+    -o-border-radius: 6px;
+    border-radius: 6px;
+    box-shadow: 0 2px 4px rgba(43,59,93,0.29);
+    -webkit-box-shadow: 0 2px 4px rgba(43,59,93,0.29);
+    -moz-box-shadow: 0 2px 4px rgba(43,59,93,0.29);
+}
+
+.promotion-wrapper .ds-guarantee-text h2{
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 40px;
+    margin-top: 0px;
+}
+
+.promotion-wrapper .ds-guarantee-text h3 {
+    font-size: 18px;
+    margin-top: 0px;
+    color: #ffffff;
+    margin-top: 0px;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+/
+/* ======= sections-wrapper ======= */
+.sections-wrapper {
+  background: #fff;
+  z-index: 20;
+  position: relative;
+}
+.section .intro {
+  max-width: 700px;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  text-align: center;
+  color: #999999;
+  font-size: 22px;
+}
+.section-on-bg .title {
+  color: #333;
+}
+.section-on-bg .intro {
+  color: #666;
+  -webkit-opacity: 0.8;
+  -moz-opacity: 0.8;
+  opacity: 0.8;
+}
+/* ======= features ======= */
+.features {
+  padding-top: 60px;
+  padding-bottom: 50px;
+}
+
+.gray{
+   background: #f6f6f6;
+}
+
+.rev-inner{
+   background: #ffffff;
+   padding: 10px;
+   margin-bottom: 27px;
+   -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.rev-inner2{
+   padding: 10px;
+   margin-bottom: 30px;
+   -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  text-align: center;
+      background-color: #fff;
+    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.1);
+
+}
+
+
+.rev-inner3{
+   padding: 20px;
+   margin-bottom: 20px;
+   margin-top: 6px;
+   -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  text-align: center;
+  border: 2px solid #f6f6f6;
+  /*-webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    border: 1px solid rgba(0,0,0,0.1);*/
+
+}
+
+
+.rev-inner span{
+   font-weight: 600;
+   font-size: 14px;
+}
+
+
+.rev-inner-serv{
+   padding: 40px;
+   margin-bottom: 30px;
+   -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  text-align: center;
+  background: #f6f6f6 url("../images/line-bg.png") repeat;
+  border: 2px solid #e8e8e8;
+
+}
+
+.ser-txt{
+   font-size: 28px !important;
+   font-weight: bold !important;
+}
+
+.features .title {
+   font-size: 42px;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 7px;
+  color: #333;
+}
+.features .intro {
+  color: #999999;
+  margin-bottom: 30px;
+  font-size: 18px;
+}
+
+.features .item.last-item {
+  border-bottom: none;
+}
+.features .item .title {
+  font-size: 36px;
+  color: #333;
+  font-weight: bold;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.features .item .desc .fa {
+  margin-right: 5px;
+}
+.features .item .quote {
+  position: relative;
+}
+.features .item .quote .quote-profile {
+  position: absolute;
+  left: 0;
+}
+.features .item .quote .quote-content {
+  margin-left: 90px;
+  background: #f5f5f5;
+  border-left: 4px solid #e8e8e8;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  font-size: 14px;
+  padding: 15px;
+}
+.features .item .quote .quote-content:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 10px solid #e8e8e8;
+  position: absolute;
+  left: 80px;
+  top: 25px;
+}
+.features .item .quote blockquote {
+  border-left: none;
+  font-style: italic;
+  color: #666666;
+  font-size: 16px;
+  padding: 0;
+  margin-bottom: 10px;
+}
+.features .item .quote .source {
+  color: #999999;
+  font-size: 13px;
+  margin-bottom: 0;
+}
+.features .item .quote .source a {
+  color: #999999;
+}
+.features .item .quote .source a:hover {
+  color: #808080;
+}
+.features .figure {
+  position: relative;
+  text-align: center;
+}
+.features .figure .figure-caption {
+  color: #b3b3b3;
+  font-size: 13px;
+  margin-top: 10px;
+  text-align: center;
+}
+.features .figure .figure-caption a {
+  color: #b3b3b3;
+}
+.features .figure .figure-caption a:hover {
+  color: #ec6952;
+}
+.features .figure img {
+  margin-left: auto;
+  margin-right: auto;
+}
+.features .control {
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  margin-left: -65px;
+}
+.features .control .play-trigger {
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border: 4px solid #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  margin: 0 auto;
+  text-align: center;
+  -webkit-opacity: 0.9;
+  -moz-opacity: 0.9;
+  opacity: 0.9;
+  -webkit-transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -ms-transition: all 0.4s ease-in-out;
+  -o-transition: all 0.4s ease-in-out;
+}
+.features .control .play-trigger:active,
+.features .control .play-trigger:focus {
+  outline: none;
+}
+.features .control .play-trigger:hover {
+  color: #fff;
+  -webkit-opacity: 1;
+  -moz-opacity: 1;
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.6);
+}
+.features .control .play-trigger:hover .fa {
+  cursor: pointer;
+}
+.features .control .play-trigger .fa {
+  font-size: 26px;
+  position: relative;
+  left: 2px;
+}
+.features .feature-lead .title {
+  font-weight: 300;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+#mfHomePageBackGroundProdImages {
+    min-height: 100%;
+    width: 100%;
+    position: absolute;
+    margin: 0;
+    background-size: cover!important;
+    background-repeat: no-repeat!important;
+    background-position: 20%;
+}
+
+.charity-wrapper{
+   background: #28bd8b url("<%= asset_path('charity-bg.png') %>") no-repeat;
+   border: 3px dashed #ffffff;
+  /* border-top: 3px dashed #ffffff;*/
+   padding: 4px;
+   margin-bottom: 60px;
+}
+
+.charity-wrapper h4{
+   font-weight: bold;
+   font-size: 25px;
+   text-align: center;
+   color: #ffffff;
+}
+
+
+.charity-wrapper p{
+   text-align: center;
+   font-weight: 500;
+   color: #ffffff;
+}
+
+
+/* Large devices (large desktops, 1200px and up) */
+</style>

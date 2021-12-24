@@ -13,6 +13,16 @@
  *= require_tree .
  *= require_self
  */
+ 
+ .mdi-36px {
+    font-size: 39px;
+    margin-right: 10px
+}
+
+ body {
+    font-family: Raleway, arial, sans-serif;
+ }
+
 
  .card-title {
     color: #318e87;

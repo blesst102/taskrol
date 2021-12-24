@@ -1,0 +1,74 @@
+<div class="container">
+<div class="modal-body">
+<div class="card">
+<div class="card-header">
+<h5 class="card-title">Tell Us About Your Project</h5>
+</div>
+<div class="card-body">
+<%= form_with(model: project) do |form| %>
+  <% if project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+        <% project.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<div class="row">
+<div class="col-xl-4 col-lg-4 col-md-3">
+<div class="form-group">
+  <label>Title</label>
+  <%= form.text_field :title, class: 'form-control with-light' %>
+</div>
+</div>     
+
+<div class="col-xl-4 col-lg-4 col-md-3">
+<div class="form-group">
+  <label>Project Area</label>
+  <%= form.text_field :location, class: 'form-control with-light' %>
+</div>
+</div>   
+
+<div class="col-xl-4 col-lg-4 col-md-3">
+<div class="form-group">
+  <label>Budget</label>
+  <%= form.text_field :budget, class: 'form-control with-light', placeholder: 'eg GH500.00' %>
+</div>
+</div>   
+</div>
+<div class="row">
+<div class="col-xl-4 col-lg-4 col-md-3">
+<div class="form-group">
+  <label>Expert type needed</label>
+  <%= form.text_field :expert, class: 'form-control with-light' %>
+</div>
+</div>   
+
+<div class="col-xl-4 col-lg-4 col-md-3">
+<div class="form-group">
+  <label>Time Period</label>
+  <%= form.select :duration, [["1 Week plus", '1 Week plus'], 
+  ["1 Month plus", '1 Month plus']], { :selected => false }, 
+  class: 'form-control with-light', required: true %>
+</div>
+</div>   
+
+<div class="col-xl-6 col-lg-6 col-md-3">
+<div class="form-group">
+  <label>Tell us soemthing brief about the service you need</label>
+  <%= form.text_area :description, class: 'form-control with-light' %>
+</div>
+</div>   
+</div>
+  <div class="actions">
+    <%= form.submit class: 'btn btn-success' %>
+  </div>
+  </div>
+<% end %>
+</div>
+</div>
+</div>
+</div>
