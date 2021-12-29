@@ -93,7 +93,13 @@
                                         </div>
                                         <%= form.select :photo, [["Certified", 'Certified'], ["Uncertified", 'Uncertified']], { :selected => false }, class: 'form-select', required: true %>
                                         </div>			
-
+                                        <%= form.select :skills, [["Handyman (Plumbing, Carpentry etc.)", 'Handyman'], 
+                                        ["Waste Pickup", 'Waste Pickup'], ["Electrical Repairs", 'Electrical Repairs'], 
+                                        ["Web & IT", 'Web & IT'], ["Janitor", 'janitor'], ["Phone & Laptop Repairs", 'Phone & Laptop Repairs'], 
+                                        ["Decoration", 'Decoration'], ["Mechanic", 'Mechanic'], ["Driver", 'Driver'], 
+                                        ["Errand Runner", 'Errand Runner'], ["Fashion & Art Designer", 'Fashion & Art Designer'], 
+                                        ["AC & CCTV Technician", 'AC & CCTV Technician'], ["Landscapping", 'Landscapping'], 
+                                        ["Photography", 'Photography']], { :selected => false }, class: 'form-select', required: true %>
                                     </div>
                                     <%= form.submit class: 'btn btn-success' %>
                                   

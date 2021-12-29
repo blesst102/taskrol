@@ -12,7 +12,6 @@ class RequestsController < ApplicationController
     @user = User.all
     @proposals = @request.proposals.order(created_at: :desc)
     @awarded_proposal = Proposal.where(id: @request.awarded_proposal).first
-    @user_skills = UserSkill.all
   end
 
   # GET /requests/new
@@ -65,15 +64,7 @@ class RequestsController < ApplicationController
   end
 
   def feed
-    @my_interests = current_user.skill_ids
-
-    #check if the authenticated user has any interests
-    if @my_interests.any?
-      @requests = Request.select { |r| (r.skill_ids & @my_interests).any? }
-    else
-      #load all the posts if the authenticated user has not specified any interests
       @requests = Request.all
-    end
   end
 
   def myrequests
@@ -88,6 +79,6 @@ class RequestsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def request_params
-      params.require(:request).permit(:title, :category_id, :requestoption_id, :streetname, :landmark, :housenumber, :description, :date, :time, :open, :awarded_proposal, skill_ids: [])
+      params.require(:request).permit(:title, :category_id, :requestoption_id, :streetname, :landmark, :housenumber, :description, :date, :time, :open, :awarded_proposal, :skills)
     end
 end

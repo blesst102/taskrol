@@ -66,11 +66,9 @@
                                         <div class="_list_jobs_f1ex">
                                           <div class="_list_110_caption">
                                             <h4 class="_jb_title">Skills Rquired</h4>
-                                            <% if request.skills.any? %>
                                             <div class="_emp_jb">
-                                            <%= render request.skills %>
+                                            <%= request.skills %>
                                           </div>
-                                          <% end %>
                                           </div>
                                         </div>
                                         <div class="_list_jobs_f1ex">

@@ -175,10 +175,13 @@
                       <div class="col-xl-4 col-lg-12">
                         <div class="form-group">
                           <label>Select expertise</label><br>
-                          <% Skill.all.each do |skill| %>
-                            <%= check_box_tag "request[skill_ids][]", skill.id %>
-                            <%= skill.title %><br>
-                          <% end %>
+                          <%= form.select :skills, [["Handyman (Plumbing, Carpentry etc.)", 'Handyman'], 
+                          ["Waste Pickup", 'Waste Pickup'], ["Electrical Repairs", 'Electrical Repairs'], 
+                          ["Web & IT", 'Web & IT'], ["Janitor", 'janitor'], ["Phone & Laptop Repairs", 'Phone & Laptop Repairs'], 
+                          ["Decoration", 'Decoration'], ["Mechanic", 'Mechanic'], ["Driver", 'Driver'], 
+                          ["Errand Runner", 'Errand Runner'], ["Fashion & Art Designer", 'Fashion & Art Designer'], 
+                          ["AC & CCTV Technician", 'AC & CCTV Technician'], ["Landscapping", 'Landscapping'], 
+                          ["Photography", 'Photography']], { :selected => false }, class: 'form-select', required: true %>
                         </div>
                       </div>                                            
                     </div>

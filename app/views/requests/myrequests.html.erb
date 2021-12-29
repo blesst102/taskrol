@@ -52,7 +52,9 @@
                                                     </div>
                                                     <div class="_dash_grid_box_caption">
                                                         <span class="_elopi_location"><i class="fa fa-street-view mr-1"></i><%= request.streetname %>, <%= request.housenumber %></span>
-                                                        <h4 class="_elcio_title"><a href="#"><%= link_to request.title, request %><%#= request.title %></a></h4>
+                                                        <h4 class="_elcio_title"><a href="#"><%= link_to request.title, request %><br><br>
+                                                        
+                                                        Skill: <%= request.skills %></a></h4>
                                                         <div class="_dash_usr_rates">
                                                             <span class="good">4.5</span>
                                                             <i class="fa fa-star"></i>
@@ -64,6 +66,7 @@
                                                         
                                                         <div class="_dash_usr_bid_rate">
                                                             <ul>
+                                                                
                                                                 <li><%= request.category.range %><span>Fixed price</span></li>
                                                                 <li><%= request.proposals.count %><span>Messages</span></li>
                                                             </ul>																
