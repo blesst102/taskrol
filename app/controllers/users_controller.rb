@@ -13,10 +13,8 @@ class UsersController < ApplicationController
     def index
         if current_user.has_role?(:admin)
             @users = User.all
-            @proposals = Proposal.all
-            @requests = Request.all
-           
-
+            #@proposals = Proposal.all
+            #@requests = Request.all
         else
             redirect_to root_path
         end

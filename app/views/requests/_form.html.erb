@@ -123,16 +123,9 @@
                       </div>
                     <div class="row">
                       <div class="col-xl-6 col-lg-6">
-                        <label>Landmark</label>
+                        <label>House Number</label>
                         <div class="form-row">
-                          <div class="col-xl-6 col-lg-6 col-md-3">
-                            <div class="input-group mb-3">
-                            <%= form.text_field :landmark, class: 'form-control with-light' %>
-                              <div class="input-group-append">
-                                <span class="input-group-text light">GH</span>
-                              </div>
-                            </div>
-                          </div>
+                          
                           <div class="col-xl-6 col-lg-6 col-md-3">
                             <div class="input-group mb-3">
                             <%= form.text_field :housenumber, class: 'form-control with-light br-0' %>
@@ -175,7 +168,7 @@
                       <div class="col-xl-4 col-lg-12">
                         <div class="form-group">
                           <label>Select expertise</label><br>
-                          <%= form.select :skills, [["Handyman (Plumbing, Carpentry etc.)", 'Handyman'], 
+                          <%= form.select :landmark, [["Handyman (Plumbing, Carpentry etc.)", 'Handyman'], 
                           ["Waste Pickup", 'Waste Pickup'], ["Electrical Repairs", 'Electrical Repairs'], 
                           ["Web & IT", 'Web & IT'], ["Janitor", 'janitor'], ["Phone & Laptop Repairs", 'Phone & Laptop Repairs'], 
                           ["Decoration", 'Decoration'], ["Mechanic", 'Mechanic'], ["Driver", 'Driver'], 

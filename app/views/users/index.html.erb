@@ -74,8 +74,8 @@
 								<!-- Single Item -->
 								<div class="col-lg-6 col-md-6 col-sm-12">
 									<div class="_freelacers_120 large shadow_0">
-										<div class="_freelancers_rate"><%= user.proposals.count %> | 
-                         <%= awarded_proposal.id %>
+										<div class="_freelancers_rate"><%#= user.proposals.count %> | 
+                         <%#= awarded_proposal.id %>
                       </div>
 										<div class="_freelacers_120_thumb">
                     <% if user.avatar.attached? %>
@@ -99,7 +99,7 @@
 										<div class="_freelacers_120_body">
 											<div class="_free0o9">
 												<ul>
-                        <i class="fa fa-handshake-o"></i> <%= user.skills %>
+                        <i class="fa fa-handshake-o"></i> <%= user.photo %>
 												</ul>
 											</div>
                       <div class="_free0o9">
