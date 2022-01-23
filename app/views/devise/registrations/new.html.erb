@@ -77,14 +77,7 @@
           </div>
           <div  id="form1" style="display:none;">
           <div class="form-group">
-          <label>What are you good at ?</label>
-          <%= f.select :skills, [["Handyman (Plumbing, Carpentry etc.)", 'Handyman'], 
-          ["Waste Pickup", 'Waste Pickup'], ["Electrical Repairs", 'Electrical Repairs'], 
-          ["Web & IT", 'Web & IT'], ["Janitor", 'janitor'], ["Phone & Laptop Repairs", 'Phone & Laptop Repairs'], 
-          ["Decoration", 'Decoration'], ["Mechanic", 'Mechanic'], ["Driver", 'Driver'], 
-          ["Errand Runner", 'Errand Runner'], ["Fashion & Art Designer", 'Fashion & Art Designer'], 
-          ["AC & CCTV Technician", 'AC & CCTV Technician'], ["Landscapping", 'Landscapping'], 
-          ["Photography", 'Photography']], { :selected => false }, class: 'form-select', required: true %>
+          <%= f.text_field :skills, class: "form-control", placeholder: 'What are you good at ' %>
           </div>
 
             <%= f.hidden_field :photo, class:"form-control", readonly: "true", value: 'uncertified' %>
